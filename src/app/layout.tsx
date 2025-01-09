@@ -22,10 +22,7 @@ export default function RootLayout( {
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=PT+Sans+Narrow:wght@400;700&family=Titan+One&display=swap"
-          rel="stylesheet"
-        />
+        <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Luckiest+Guy&family=Rock+Salt&display=swap" rel="stylesheet" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta property="og:title" content="Tina Huynh Portfolio" />
         <meta name="description" content={description} />
@@ -58,8 +55,9 @@ const MainContent = ( {
         <>
           <NavSidebar />
           <SidebarTrigger className='py-10 pl-9' />
-        </>}
-      <main className='relative w-9/12 mx-auto py-10'>
+        </>
+      }
+      <main className='relative w-11/12 mx-auto py-5'>
         {children}
       </main>
     </>

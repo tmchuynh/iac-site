@@ -1,16 +1,10 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import * as React from "react";
 import { useEffect, useState } from "react";
+import { Switch } from "./ui/switch";
 
 export function ModeToggle() {
   const { theme, setTheme } = useTheme();
@@ -43,48 +37,16 @@ export function ModeToggle() {
   };
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button
-          variant={theme === "dark" ? "secondary" : "default"}
-          size="icon"
-          aria-label="Toggle Dark Mode"
-          className="min-h-12 min-w-12"
-        >
-          {theme === "dark" ? (
-            <Sun className="transition-all rotate-0 scale-100" role="img" aria-label="toggle light mode" />
-          ) : (
-            <Moon className="transition-all rotate-12 scale-100" role="img" aria-label="toggle dark mode" />
-          )}
-          <span className="sr-only">Toggle theme</span>
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuItem
-          onClick={() => {
-            setTheme( "light" );
-            handleThemeToggle();
-          }}
-        >
-          Light
-          {theme === "light" && (
-            <span className="ml-2 text-sm text-popover-foreground">
-              (active)
-            </span>
-          )}
-        </DropdownMenuItem>
-        <DropdownMenuItem
-          onClick={() => {
-            setTheme( "dark" );
-            handleThemeToggle();
-          }}
-        >
-          Dark
-          {theme === "dark" && (
-            <span className="ml-2 text-sm text-muted-foreground">(active)</span>
-          )}
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
+    <Switch
+      checked={theme === 'dark'}
+      onCheckedChange={handleThemeToggle}
+      aria-label="Toggle theme"
+    >
+      {theme === "dark" ? (
+        <Sun className="transition-all rotate-0 scale-75 m-auto h-full" role="img" aria-label="toggle light mode" />
+      ) : (
+        <Moon className="transition-all rotate-12 scale-75 m-auto h-full" role="img" aria-label="toggle dark mode" />
+      )}
+    </Switch>
   );
 }

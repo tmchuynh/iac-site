@@ -12,6 +12,11 @@ export default {
 			colors: {
 				background: 'var(--background)',
 				foreground: 'var(--foreground)',
+				fonts: {
+					heading: 'var(--heading)',
+					body: 'var(--body)',
+					special: 'var(--special)',
+				},
 				card: {
 					DEFAULT: 'var(--card)',
 					foreground: 'var(--card-foreground)',
@@ -61,10 +66,24 @@ export default {
 					ring: 'var(--sidebar-ring)',
 				}
 			},
+			fontFamily: {
+				Atop: ['Atop', 'sans-serif'],
+				Bubble: ['Bubble-Love', 'serif'],
+				Chicle: ['Chicle-Regular', 'serif'],
+				Fungky: ['Fungky-Brow', 'serif'],
+				Halo: ['Halo-Dek', 'serif'],
+				LapsusPro: ['LapsusPro-Bold', 'serif'],
+				Luckiest: ['Luckiest', 'serif'],
+				Magic: ['Magic-Bubble', 'serif'],
+				Milkyway: ['Milkyway', 'serif'],
+				MouseMemoirs: ['MouseMemoirs-Regular', 'serif'],
+				Nabana: ['Nabana-ShadowBold', 'serif'],
+				Whoa: ['Whoa', 'serif'],
+			},
 			borderRadius: {
 				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+				md: 'calc(var(--radius) - 4px)',
+				sm: 'calc(var(--radius) - 8px)'
 			}
 		}
 	},

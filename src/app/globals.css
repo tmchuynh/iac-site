@@ -17,7 +17,7 @@ body {
     --primary: #7e22ce;
     --primary-foreground: #f5f5f5;
     --secondary: #1d4ed8;
-    --secondary-foreground: #080707;
+    --secondary-foreground: #f5f5f5;
     --muted: #8c91a4;
     --muted-foreground: #080707;
     --accent: #155e75;
@@ -32,7 +32,7 @@ body {
     --chart-3: #818cf8;
     --chart-4: #e879f9;
     --chart-5: #60a5fa;
-    --radius: 0.5rem;
+    --radius: 0.75rem;
     --sidebar-background: #fafafa;
     --sidebar-foreground: #080707;
     --sidebar-primary: #590690;
@@ -78,23 +78,95 @@ body {
   }
 }
 
+@font-face {
+  font-family: "Atop";
+  src: url("/fonts/Atop.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Bubble-Love";
+  src: url("/fonts/Bubble-Love.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Chicle-Regular";
+  src: url("/fonts/Chicle-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Fungky-Brow";
+  src: url("/fonts/Fungky-Brow.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Halo-Dek";
+  src: url("/fonts/Halo-Dek.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "LapsusPro-Bold";
+  src: url("/fonts/LapsusPro-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Luckiest";
+  src: url("/fonts/LuckiestGuy-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Magic-Bubble";
+  src: url("/fonts/Magic-Bubble.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Milkyway";
+  src: url("/fonts/Milkyway.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MouseMemoirs-Regular";
+  src: url("/fonts/MouseMemoirs-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Nabana-ShadowBold";
+  src: url("/fonts/Nabana-ShadowBold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Whoa";
+  src: url("/fonts/Whoa.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
 @layer base {
   * {
     @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
-  }
-
-  .header-font-family {
-    font-family: "Luckiest Guy", cursive;
-  }
-
-  .special-font-family {
-    font-family: "Rock Salt", cursive;
-  }
-  header,
-  footer {
-    @apply header-font-family;
   }
 }
