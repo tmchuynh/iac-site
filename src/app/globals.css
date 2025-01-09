@@ -2,20 +2,99 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body {
+  font-family: "Comic Neue", cursive;
 }
 
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff;
+    --foreground: #080707;
+    --card: #eeeeee;
+    --card-foreground: #080707;
+    --popover: #eeeeee;
+    --popover-foreground: #080707;
+    --primary: #590690;
+    --primary-foreground: #f5f5f5;
+    --secondary: #3451b4;
+    --secondary-foreground: #080707;
+    --muted: #8c91a4;
+    --muted-foreground: #080707;
+    --accent: #fce481;
+    --accent-foreground: #3b322d;
+    --destructive: #cc3e58;
+    --destructive-foreground: #f5f5f5;
+    --border: #dcdcdc;
+    --input: #e5e5e5;
+    --ring: #33302a;
+    --chart-1: #d97d44;
+    --chart-2: #5a9971;
+    --chart-3: #4c8777;
+    --chart-4: #a1d992;
+    --chart-5: #d1dd67;
+    --radius: 0.5rem;
+    --sidebar-background: #fafafa;
+    --sidebar-foreground: #080707;
+    --sidebar-primary: #590690;
+    --sidebar-primary-foreground: #fafafa;
+    --sidebar-accent: #eeeeee;
+    --sidebar-accent-foreground: #3451b4;
+    --sidebar-border: #dde0e5;
+    --sidebar-ring: #85c4ec;
+  }
+  .dark {
+    --background: #121212;
+    --foreground: #eaeaea;
+    --card: #1a141e;
+    --card-foreground: #eaeaea;
+    --popover: #1a141e;
+    --popover-foreground: #eaeaea;
+    --primary: #bb86fc;
+    --primary-foreground: #1c1b1b;
+    --secondary: #03dac6;
+    --secondary-foreground: #1c1b1b;
+    --muted: #3a3a3a;
+    --muted-foreground: #cccccc;
+    --accent: #cf6679;
+    --accent-foreground: #1c1b1b;
+    --destructive: #cf6679;
+    --destructive-foreground: #ffffff;
+    --border: #424242;
+    --input: #424242;
+    --ring: #bb86fc;
+    --chart-1: #bb86fc;
+    --chart-2: #03dac6;
+    --chart-3: #cf6679;
+    --chart-4: #ffde03;
+    --chart-5: #b00020;
+    --sidebar-background: #121212;
+    --sidebar-foreground: #eaeaea;
+    --sidebar-primary: #bb86fc;
+    --sidebar-primary-foreground: #eaeaea;
+    --sidebar-accent: #494949;
+    --sidebar-accent-foreground: #cccccc;
+    --sidebar-border: #292828;
+    --sidebar-ring: #85c4ec;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  .header-font-family {
+    font-family: "Luckiest Guy", cursive;
+  }
+
+  .special-font-family {
+    font-family: "Rock Salt", cursive;
+  }
+  header,
+  footer {
+    @apply header-font-family;
+  }
 }
