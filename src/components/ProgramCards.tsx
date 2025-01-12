@@ -11,14 +11,22 @@ import {
   CardTitle,
 } from "./ui/card";
 import { programs } from "@/data/data";
+import { useSidebar } from "./ui/sidebar";
 
 export default function ProgramCards() {
   const router = useRouter();
+  const { open } = useSidebar();
 
   return (
-    <section className="mb-12 grid grid-cols-2 gap-3">
+    <section className={open ? "mb-12 grid grid-cols-2 gap-3" : "mb-12 grid grid-cols-3 gap-3"}>
       {programs.map( ( program, index ) => (
-        <Card key={index} className="grid grid-rows-2">
+        <Card key={index} className={
+          open
+            ? "grid grid-rows-2"
+            : index % 2 === 0
+              ? "grid grid-rows-2 bg-muted"
+              : "grid grid-rows-2"
+        }>
           <CardHeader className="row-span-2">
             <CardTitle>{program.title}</CardTitle>
             <CardDescription>{program.description}</CardDescription>

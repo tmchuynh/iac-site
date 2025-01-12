@@ -3,11 +3,14 @@
 import { testimonials } from "@/data/data";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./carousel";
 import Autoplay from "embla-carousel-autoplay";
+import { useSidebar } from "./sidebar";
 
 export default function Testimonial() {
+  const { open } = useSidebar();
+
   return (
     <section className="relative isolate overflow-hidden px-6">
-      <Carousel className="mx-auto max-w-lg"
+      <Carousel className={open ? "mx-auto max-w-lg" : "mx-auto max-w-3xl"}
         opts={{
           align: "start",
           loop: true,

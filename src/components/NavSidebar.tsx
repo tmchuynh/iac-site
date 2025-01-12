@@ -13,17 +13,9 @@ import {
 import { NavMain } from "./NavMain";
 import { NavFooter } from "./NavFooter";
 import { navBar } from "@/data/data";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 
 export function NavSidebar( { ...props }: React.ComponentProps<typeof Sidebar> ) {
   const [openItemKey, setOpenItemKey] = React.useState<string | null>( null );
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState( false );
-
-  useEffect( () => {
-    setMounted( true );
-  }, [] );
 
   return (
     <Sidebar variant="floating" {...props}>

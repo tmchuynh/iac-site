@@ -1,7 +1,7 @@
 "use client";
 
 import { NavSidebar } from "@/components/NavSidebar";
-import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar';
+import { SidebarProvider, SidebarTrigger, useSidebar } from '@/components/ui/sidebar';
 import Head from "next/head";
 import React from "react";
 import { NotFoundProvider, useNotFound } from "./context/NotFoundContext";
@@ -48,13 +48,14 @@ const MainContent = ( {
   children: React.ReactNode;
 } ) => {
   const { isNotFound } = useNotFound();
+  const { open } = useSidebar();
 
   return (
     <>
       {!isNotFound &&
         <>
           <NavSidebar />
-          <SidebarTrigger className='py-10 pl-3 pr-4 sticky top-5' />
+          <SidebarTrigger className={open ? 'py-10 pl-5 pr-4 sticky top-5' : 'py-10 pl-10 pr-4 sticky top-5'} />
         </>
       }
       <main className='relative w-11/12 mx-auto py-10 pr-5'>

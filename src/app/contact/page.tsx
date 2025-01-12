@@ -3,12 +3,14 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useSidebar } from "@/components/ui/sidebar";
 import { Textarea } from "@/components/ui/textarea";
 import { useRouter } from "next/navigation";
 import React from "react";
 
 export function ContactSection14() {
   const router = useRouter();
+  const { open } = useSidebar();
 
   const handleClick = ( event: React.MouseEvent<HTMLButtonElement> ) => {
     const button = event.currentTarget;
@@ -43,11 +45,11 @@ export function ContactSection14() {
             </Button>
           </p>
         </div>
-        <div className="grid grid-cols-1 gap-x-12 gap-y-6 lg:grid-cols-2 items-start">
+        <div className={open ? "flex gap-4 flex-col" : "flex gap-4"}>
           <img
             src="/images/classroom-2.jpg"
             alt="map"
-            className="w-full h-full object-cover object-center"
+            className={open ? "w-full max-h-2xl object-cover object-center" : "w-1/2 max-h-2xl object-cover object-center"}
           />
           <form
             action="#"
