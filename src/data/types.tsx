@@ -13,3 +13,30 @@ export interface navSubItem {
   title: string;
   url: string;
 }
+
+export interface staffInfo {
+  id: number;
+  name: string;
+  role: string;
+  bio: string;
+  image: string;
+  icons: string[];
+  moreInfo?: {
+    text: string;
+    images: string[];
+  };
+}
+
+export interface programInfo {
+  title: string;
+  icons: ForwardRefExoticComponent<Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>>[] | IconType[];
+  description: string;
+}
+
+export interface testimonialsInfo {
+  name: string;
+  title: string;
+  school: string;
+  class: string;
+  text: string;
+}

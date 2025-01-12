@@ -1,7 +1,10 @@
-import { House, Info, Send, Pen, MessageSquareCode, BookMarked } from "lucide-react";
-import { FaChess, FaBasketballBall, FaVolleyballBall, FaFootballBall, FaPencilAlt, FaTheaterMasks } from "react-icons/fa";
+import { House, Info, Send } from "lucide-react";
+import { FaChess, FaBasketballBall, FaVolleyballBall, FaFootballBall, FaPencilAlt, FaTheaterMasks, FaChessBishop, FaChessKing, FaChessKnight, FaChessQueen, FaChessRook, FaCode, FaLaptopCode } from "react-icons/fa";
+import { FaPencil } from "react-icons/fa6";
+import { GiAmericanFootballHelmet, GiBasketballJersey, GiWhistle } from "react-icons/gi";
+import { TfiWrite } from "react-icons/tfi";
 import { IoIosChatbubbles } from "react-icons/io";
-import { MdOutlineSportsSoccer } from "react-icons/md";
+import { MdOutlineFormatQuote, MdOutlineSportsSoccer, MdTimer } from "react-icons/md";
 
 export const navBar = {
   navMain: [
@@ -33,9 +36,18 @@ export const navBar = {
       ],
     },
     {
-      title: "Staff",
-      url: "/staff",
-      icon: Send,
+      title: "About Us",
+      icon: Info,
+      items: [
+        {
+          title: "Our Mission",
+          url: "/about/iac",
+        },
+        {
+          title: "Staff",
+          url: "/about/staff",
+        },
+      ],
     },
     {
       title: "Contact",
@@ -43,103 +55,58 @@ export const navBar = {
       icon: Send,
     },
   ],
-  works: [
-    {
-      title: "Writings",
-      icon: Pen,
-      items: [
-        {
-          title: "Front-End Development Book",
-          url: "/book/frontendbook",
-        },
-        {
-          title: "Back-End Development Book",
-          url: "/book/backendbook",
-        },
-        {
-          title: "Dev.to Blog",
-          url: "/writings/devto",
-        },
-      ],
-    },
-    {
-      title: "Projects",
-      icon: MessageSquareCode,
-      items: [
-        {
-          title: "My Business",
-          url: "/projects/mybusiness",
-        },
-        {
-          title: "IAC Website",
-          url: "/projects/iacwebsite",
-        },
-        {
-          title: "Quiz Application",
-          url: "/projects/quizapplication",
-        },
-        {
-          title: "Sudoku",
-          url: "/projects/sudoku",
-        },
-        {
-          title: "More on GitHub",
-          url: "https://github.com/tmchuynh?tab=repositories",
-        },
-      ],
-    },
-    {
-      title: "Future Projects",
-      icon: BookMarked,
-      items: [
-        {
-          title: "Book Collection",
-          url: "/futureProjects/bookCollection",
-        },
-        {
-          title: "Event Planner",
-          url: "/futureProjects/eventPlanner",
-        },
-        {
-          title: "Habit Tracker",
-          url: "/futureProjects/habitTracker",
-        },
-        {
-          title: "Health and Wellness Tracker",
-          url: "/futureProjects/health&wellness",
-        },
-        {
-          title: "Job Market Data App",
-          url: "/futureProjects/jobMarketData",
-        },
-        {
-          title: "Life Management Platform",
-          url: "/futureProjects/lifeManagementPlatform",
-        },
-        {
-          title: "Online Learning Platform",
-          url: "/futureProjects/onlineLearning",
-        },
-        {
-          title: "Personal Finance",
-          url: "/futureProjects/personalFinance",
-        },
-        {
-          title: "Pet Adoption Service",
-          url: "/futureProjects/petAdoptionService",
-        },
-        {
-          title: "Storytelling Platform",
-          url: "/futureProjects/storytellingPlatform",
-        },
-        {
-          title: "Automatic Travel Itinerary Planner",
-          url: "/futureProjects/automaticTravelItinerary",
-        },
-      ]
-    },
-  ],
 };
+
+export const programs = [
+  {
+    title: 'Chess',
+    icons: [FaChessBishop, FaChessKing, FaChessKnight, FaChessQueen, FaChessRook],
+    image: "/images/chessboard.jpg",
+    description: 'Dive into the world of chess and unleash your potential for strategic mastery, honing your critical thinking and tactical brilliance every step of the way.',
+  },
+  {
+    title: 'Basketball',
+    icons: [FaBasketballBall, GiBasketballJersey],
+    image: "/images/basketball.jpg",
+    description: 'Master the court with our basketball classes, where skill and strategy come together in an electrifying blend of teamwork and excitement.',
+  },
+  {
+    title: 'Volleyball',
+    icons: [FaVolleyballBall, MdTimer],
+    image: "/images/volleyball.jpg",
+    description: 'Set, spike, and serve your way to volleyball mastery, where precision, strategy, and sportsmanship come together for an unbeatable experience.',
+  },
+  {
+    title: 'Flag Football',
+    icons: [FaFootballBall, GiAmericanFootballHelmet],
+    image: "/images/flagfootball.jpg",
+    description: 'Experience the thrill of flag football, where high energy and teamwork blend seamlessly for an exciting time on the field.',
+  },
+  {
+    title: 'Soccer',
+    icons: [MdOutlineSportsSoccer, GiWhistle],
+    image: "/images/soccer.jpg",
+    description: 'Step onto the field and elevate your game, sharpening your skills while embracing the spirit of teamwork and strategic play.',
+  },
+  {
+    title: 'Performing Arts',
+    icons: [FaTheaterMasks],
+    image: "/images/theater.jpg",
+    description: 'Learn to play theater and masks with our theater and masks classes, where skill and creativity come together in an exciting blend of artistic expression and creative problem-solving.',
+  },
+  {
+    title: 'Coding',
+    icons: [FaLaptopCode, FaCode],
+    image: "/images/codingclass.jpg",
+    description: 'Code your way to creativity and innovation with hands-on projects and interactive, game-based learning that makes programming fun and inspiring.',
+  },
+  {
+    title: 'Creative Writing',
+    icons: [FaPencil, TfiWrite, MdOutlineFormatQuote],
+    image: "/images/creativewriting.jpg",
+    description: 'Unleash your imagination and bring your ideas to life by transforming them into compelling narratives through the art of writing.',
+  }
+];
 
 export const staffCategories = [
   {
@@ -258,22 +225,86 @@ export const links = [
 export const logos = [
   {
     alt: "Transistor",
-    src: "https://tailwindui.com/plus/img/logos/158x48/transistor-logo-gray-900.svg",
+    src: "/images/School_Icons/arroyo.jpg",
   },
   {
     alt: "Reform",
-    src: "https://tailwindui.com/plus/img/logos/158x48/reform-logo-gray-900.svg",
+    src: "/images/School_Icons/fairmont.jpg",
   },
   {
     alt: "Tuple",
-    src: "https://tailwindui.com/plus/img/logos/158x48/tuple-logo-gray-900.svg",
+    src: "/images/School_Icons/hicks.jpg",
   },
   {
     alt: "SavvyCal",
-    src: "https://tailwindui.com/plus/img/logos/158x48/savvycal-logo-gray-900.svg",
+    src: "/images/School_Icons/ladera.jpg",
   },
   {
     alt: "Statamic",
-    src: "https://tailwindui.com/plus/img/logos/158x48/statamic-logo-gray-900.svg",
+    src: "/images/School_Icons/myford.jpg",
   },
+  {
+    alt: "Statamic",
+    src: "/images/School_Icons/orchardhills.jpg",
+  },
+  {
+    alt: "Statamic",
+    src: "/images/School_Icons/peterscanyon.jpg",
+  },
+  {
+    alt: "Statamic",
+    src: "/images/School_Icons/redhill.jpg",
+  },
+  {
+    alt: "Statamic",
+    src: "/images/School_Icons/tustinranch.jpg",
+  },
+];
+
+export const testimonials = [
+  {
+    name: 'John Doe',
+    title: 'Student',
+    school: 'Orchard Hills',
+    class: 'Chess',
+    image: "/images/School_Icons/peterscanyon.jpg",
+    text:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel libero id lectus consectetur consectetur vel non velit. Aliquam erat volutpat.',
+  },
+  {
+    name: 'Jane Smith',
+    title: 'Teacher',
+    school: 'Arroyo',
+    class: 'Soccer',
+    image: "/images/School_Icons/redhill.jpg",
+    text:
+      'Proin vel tellus ac neque vulputate gravida. Sed vel libero id lectus consectetur consectetur vel non velit. Aliquam erat volutpat.',
+  },
+  {
+    name: 'Michael Johnson',
+    title: 'Principal',
+    school: 'Fairmont',
+    class: 'Creative Writing',
+    image: "/images/School_Icons/hicks.jpg",
+    text:
+      'Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.',
+  },
+  {
+    name: 'Sarah Davis',
+    title: 'Teacher',
+    school: 'Hicks',
+    class: 'Chess',
+    image: "/images/School_Icons/fairmont.jpg",
+    text:
+      'Sed vel libero id lectus consectetur consectetur vel non velit. Aliquam erat volutpat. Proin vel tellus ac neque vulputate gravida.',
+  },
+  {
+    name: 'Emily Watson',
+    title: 'Student',
+    school: 'Ladera',
+    class: 'Theater',
+    image: "/images/School_Icons/arroyo.jpg",
+    text:
+      'Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.',
+  }
 ];
