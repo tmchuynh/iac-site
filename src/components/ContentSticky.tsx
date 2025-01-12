@@ -34,7 +34,7 @@ export default function ContentSticky() {
           <div className="lg:pr-4">
             <div className="lg:max-w-lg">
               <p className="text-base/7 font-semibold">Deploy faster</p>
-              <h1 className="mt-2 text-pretty text-4xl font-semibold tracking-tight sm:text-5xl">
+              <h1 className="my-4 text-balance uppercase font-Luckiest tracking-wider lg:text-4xl text-lg text-secondary font-extrabold text-center">
                 A better workflow
               </h1>
               <p className="mt-6 text-xl/8">
