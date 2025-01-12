@@ -16,9 +16,9 @@ const StaffPage: FC = () => {
         <section key={category.category} className="mb-12">
           <h2 className="text-2xl font-semibold mb-6">{category.category}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {category.members.map( ( staff ) => (
+            {category.members.map( ( staff, index ) => (
               <div
-                key={staff.id}
+                key={index}
                 className="bg-card rounded-lg shadow-lg p-6 flex flex-col items-center text-center"
               >
                 <img
@@ -29,14 +29,9 @@ const StaffPage: FC = () => {
                 <h3 className="text-xl font-semibold mb-2">{staff.name}</h3>
                 <p className="text-sm text-accent font-medium mb-4">{staff.role}</p>
                 <p className="text-muted text-sm mb-4">{staff.bio}</p>
-                <div className="flex space-x-2 mb-4">
-                  {staff.icons.map( ( icon, index ) => (
-                    <img
-                      key={index}
-                      src={`/icons/${ icon }`}
-                      alt={`${ staff.name } icon ${ index + 1 }`}
-                      className="w-6 h-6"
-                    />
+                <div className="flex flex-wrap space-x-4 justify-center mb-4">
+                  {staff.icons.map( ( Icon, idx ) => (
+                    <Icon key={idx} className={idx % 2 === 0 ? ( idx % 5 === 0 ? "text-xl text-chart-5" : "text-xl text-chart-1" ) : ( idx % 3 === 0 ? "text-xl text-chart-3" : "text-xl text-chart-2" )} />
                   ) )}
                 </div>
                 {['Founder', 'Senior Instructors'].includes( category.category ) && (
