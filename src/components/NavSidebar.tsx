@@ -45,12 +45,6 @@ export function NavSidebar( { ...props }: React.ComponentProps<typeof Sidebar> )
           openItemKey={openItemKey}
           setOpenItemKey={setOpenItemKey}
         />
-        <NavMain
-          title="Past & Future Work"
-          items={navBar.works}
-          openItemKey={openItemKey}
-          setOpenItemKey={setOpenItemKey}
-        />
       </SidebarContent>
       <SidebarFooter>
         <NavFooter />

@@ -54,10 +54,10 @@ const MainContent = ( {
       {!isNotFound &&
         <>
           <NavSidebar />
-          <SidebarTrigger className='py-10 pl-9' />
+          <SidebarTrigger className='py-10 pl-3 pr-4 sticky top-5' />
         </>
       }
-      <main className='relative w-11/12 mx-auto py-5'>
+      <main className='relative w-11/12 mx-auto py-10 pr-5'>
         {children}
       </main>
     </>
