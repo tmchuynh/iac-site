@@ -24,7 +24,7 @@ const StaffPage: FC = () => {
                 <img
                   src={staff.image}
                   alt={staff.name}
-                  className="w-24 h-24 rounded-full mb-4 border border-input"
+                  className="w-28 h-28 rounded-full object-cover object-center mb-4 border border-input"
                 />
                 <h3 className="text-xl font-semibold mb-2">{staff.name}</h3>
                 <p className="text-sm text-accent font-medium mb-4">{staff.role}</p>
