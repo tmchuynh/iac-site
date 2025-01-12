@@ -23,7 +23,7 @@ export function ContactSection14() {
     <section className="px-8 py-8 lg:py-16">
       <div className="container mx-auto">
         <h1
-          className="mb-4 uppercase font-Luckiest tracking-wider text-4xl text-secondary font-extrabold text-center"
+          className="my-4 text-balance uppercase font-Luckiest tracking-wider lg:text-4xl text-lg text-secondary font-extrabold text-center"
         >
           Contact Us
         </h1>
@@ -37,6 +37,7 @@ export function ContactSection14() {
             <Button
               variant="link"
               onClick={() => router.push( 'tel:7145090069' )}
+              className="p-1"
             >
               (714) 509-0069
             </Button>
@@ -50,12 +51,12 @@ export function ContactSection14() {
           />
           <form
             action="#"
-            className="flex flex-col gap-4 lg:max-w-sm"
+            className="flex flex-col gap-4 lg:max-w-2xl"
           >
             <Label
               className="text-left !font-semibold"
             >
-              Select Options for Business Engagement
+              Select Option(s) for Business Engagement
             </Label>
             <div className="flex gap-4 justify-center">
               <Button variant="outline" className="w-full" type="button" onClick={handleClick}>
