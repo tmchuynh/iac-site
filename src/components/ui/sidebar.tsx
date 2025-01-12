@@ -9,6 +9,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
 
 import { Button } from "@/components/ui/button";
+import { IoMdClose } from "react-icons/io";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { Sheet, SheetContent } from "@/components/ui/sheet";
@@ -19,6 +20,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { Close } from "@radix-ui/react-dialog";
 
 const SIDEBAR_COOKIE_NAME = "sidebar:state";
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7;
@@ -265,6 +267,8 @@ const SidebarTrigger = React.forwardRef<
   React.ComponentProps<typeof Button>
 >( ( { className, onClick, ...props }, ref ) => {
   const { toggleSidebar } = useSidebar();
+  const [isHovered, setIsHovered] = React.useState( false );
+  const { open } = useSidebar();
 
   return (
     <Button
@@ -272,14 +276,36 @@ const SidebarTrigger = React.forwardRef<
       data-sidebar="trigger"
       variant="ghost"
       size="icon"
-      className={cn( "h-10 w-10 hover:bg-transparent p-2", className )}
+      className={cn(
+        "h-10 w-10 hover:bg-transparent p-2 relative flex items-center justify-center", // Ensures proper alignment
+        className
+      )}
+      onMouseEnter={() => open && setIsHovered( true )}
+      onMouseLeave={() => setIsHovered( false )}
       onClick={( event ) => {
         onClick?.( event );
         toggleSidebar();
       }}
       {...props}
     >
-      <Menu aria-hidden="true" />
+      <div className="relative w-6 h-6 flex items-center justify-center"> {/* Container for Icons */}
+        {/* Menu Icon */}
+        <Menu
+          aria-hidden="true"
+          className={cn(
+            "absolute transition-transform duration-300 ease-in-out",
+            isHovered ? "scale-0 rotate-180 opacity-0" : "scale-100 rotate-0 opacity-100"
+          )}
+        />
+        {/* Close Icon */}
+        <IoMdClose
+          aria-hidden="true"
+          className={cn(
+            "absolute transition-transform duration-300 ease-in-out",
+            isHovered ? "scale-100 rotate-0 opacity-100" : "scale-0 rotate-180 opacity-0"
+          )}
+        />
+      </div>
       <span className="sr-only">Toggle Sidebar</span>
     </Button>
   );
