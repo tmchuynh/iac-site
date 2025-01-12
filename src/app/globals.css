@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  font-family: "Comic Neue", cursive;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 @layer base {
@@ -93,6 +93,27 @@ body {
 }
 
 @font-face {
+  font-family: "Brainy-Kids";
+  src: url("/fonts/Brainy-Kids.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cute_Rabbit";
+  src: url("/fonts/Cute_Rabbit.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Chocolate";
+  src: url("/fonts/Chocolate.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
   font-family: "Chicle-Regular";
   src: url("/fonts/Chicle-Regular.ttf") format("truetype");
   font-weight: 400;
@@ -109,6 +130,13 @@ body {
 @font-face {
   font-family: "Halo-Dek";
   src: url("/fonts/Halo-Dek.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MorningBakery";
+  src: url("/fonts/MorningBakery.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
@@ -168,5 +196,8 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+  }
+  p {
+    @apply mb-2;
   }
 }
