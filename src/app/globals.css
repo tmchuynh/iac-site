@@ -10,8 +10,8 @@ body {
   :root {
     --background: #ffffff;
     --foreground: #080707;
-    --card: #eeeeee;
-    --card-foreground: #080707;
+    --card: #f4f1f1;
+    --card-foreground: #0e0e0e;
     --popover: #eeeeee;
     --popover-foreground: #080707;
     --primary: #7e22ce;
@@ -43,9 +43,9 @@ body {
     --sidebar-ring: #85c4ec;
   }
   .dark {
-    --background: #121212;
+    --background: #1e1e1e;
     --foreground: #eaeaea;
-    --card: #1a141e;
+    --card: #252525;
     --card-foreground: #eaeaea;
     --popover: #1a141e;
     --popover-foreground: #eaeaea;

@@ -19,27 +19,27 @@ const ProgramsPage: FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           <div>
-            <h2 className="text-2xl font-semibold mb-2 font-Chicle tracking-widest">Innovation</h2>
+            <h2 className="text-2xl font-semibold mb-2 font-Cute_Rabbit tracking-widest">Innovation</h2>
             <p>We constantly develop new tools and resources to enhance learning, making our programs more accessible, engaging, and effective.</p>
           </div>
           <div>
-            <h2 className="text-2xl font-semibold mb-2 font-Chicle tracking-widest">Empowerment</h2>
+            <h2 className="text-2xl font-semibold mb-2 font-Cute_Rabbit tracking-widest">Empowerment</h2>
             <p>We foster belonging and self-confidence, ensuring students feel supported to succeed and thrive in inclusive programs.</p>
           </div>
           <div>
-            <h2 className="text-2xl font-semibold mb-2 font-Chicle tracking-widest">Affordable</h2>
+            <h2 className="text-2xl font-semibold mb-2 font-Cute_Rabbit tracking-widest">Affordable</h2>
             <p>We prioritize affordability, designing programs accessible to all without compromising quality or engagement.</p>
           </div>
           <div>
-            <h2 className="text-2xl font-semibold mb-2 font-Chicle tracking-widest">Engaging</h2>
+            <h2 className="text-2xl font-semibold mb-2 font-Cute_Rabbit tracking-widest">Engaging</h2>
             <p>We create fun and interactive programs that inspire students, making learning an enjoyable experience.</p>
           </div>
           <div>
-            <h2 className="text-2xl font-semibold mb-2 font-Chicle tracking-widest">Excellence</h2>
+            <h2 className="text-2xl font-semibold mb-2 font-Cute_Rabbit tracking-widest">Excellence</h2>
             <p>We strive for excellence by continuously improving our programs to deliver the highest quality learning experience.</p>
           </div>
           <div>
-            <h2 className="text-2xl font-semibold mb-2 font-Chicle tracking-widest">Resilience</h2>
+            <h2 className="text-2xl font-semibold mb-2 font-Cute_Rabbit tracking-widest">Resilience</h2>
             <p>We design adaptable programs that meet challenges head-on, ensuring effective and impactful learning outcomes.</p>
           </div>
         </div>
