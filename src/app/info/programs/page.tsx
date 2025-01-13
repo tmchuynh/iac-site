@@ -4,6 +4,7 @@ import DoughnutChart from "@/components/PieChart";
 import { ProgramDetails } from "@/components/ProgramDetails";
 import { Button } from "@/components/ui/button";
 import { useSidebar } from "@/components/ui/sidebar";
+import { programs } from "@/data/data";
 import { useRouter } from "next/navigation";
 import { FC } from "react";
 import {
@@ -25,67 +26,17 @@ const ProgramsPage: FC = () => {
         <h1 className="my-4 text-balance uppercase font-Luckiest tracking-wider lg:text-4xl text-lg text-secondary font-extrabold text-center">
           About Our Classes
         </h1>
-        <div className="flex gap-3 flex-wrap pb-5">
-          <Button
-            variant={"outline"}
-            onClick={() => router.push("/info/schools")}
-          >
-            Chess
-          </Button>
-          <Button
-            variant={"outline"}
-            onClick={() => router.push("/info/schools")}
-          >
-            Basketball
-          </Button>
-          <Button
-            variant={"outline"}
-            onClick={() => router.push("/info/schools")}
-          >
-            Soccer
-          </Button>
-          <Button
-            variant={"outline"}
-            onClick={() => router.push("/info/schools")}
-          >
-            Volleyball
-          </Button>
-          <Button
-            variant={"outline"}
-            onClick={() => router.push("/info/schools")}
-          >
-            Flag Football
-          </Button>
-          <Button
-            variant={"outline"}
-            onClick={() => router.push("/info/schools")}
-          >
-            Performing Arts
-          </Button>
-          <Button
-            variant={"outline"}
-            onClick={() => router.push("/info/schools")}
-          >
-            Creative Writing
-          </Button>
-          <Button
-            variant={"outline"}
-            onClick={() => router.push("/info/schools")}
-          >
-            Comic Book Club
-          </Button>
-          <Button
-            variant={"outline"}
-            onClick={() => router.push("/info/schools")}
-          >
-            Public Speaking
-          </Button>
-          <Button
-            variant={"outline"}
-            onClick={() => router.push("/info/schools")}
-          >
-            Coding/Programming
-          </Button>
+        <div className="flex gap-x-4 flex-wrap pb-5">
+          {programs.map((program, index) => (
+            <Button
+              variant={"outline"}
+              size={"sm"}
+              onClick={() => router.push(`/info/showcase#${index}`)}
+              className="mt-2 group"
+            >
+              {program.title}
+            </Button>
+          ))}
         </div>
         <p className="text-md leading-relaxed">
           In order to provide an organized and effective learning experience,

@@ -11,7 +11,7 @@ import ChartDataLabels from "chartjs-plugin-datalabels";
 import { useTheme } from "next-themes";
 import { useSidebar } from "./ui/sidebar";
 
-ChartJS.register( ArcElement, Tooltip, Legend, ChartDataLabels );
+ChartJS.register(ArcElement, Tooltip, Legend, ChartDataLabels);
 
 const dataSource = [
   { id: 2, name: "Introduction of New Concepts", value: 4.5 },
@@ -21,46 +21,46 @@ const dataSource = [
   { id: 5, name: "Review and Assessment", value: 3.5 },
 ];
 
-const getCSSVariable = ( variable: string ): string => {
-  const rootStyle = window.getComputedStyle( document.documentElement );
-  return rootStyle.getPropertyValue( variable ).trim();
+const getCSSVariable = (variable: string): string => {
+  const rootStyle = window.getComputedStyle(document.documentElement);
+  return rootStyle.getPropertyValue(variable).trim();
 };
 
 const DoughnutChartLabel = () => {
   const { theme } = useTheme();
-  const [mounted, setMounted] = useState( false );
-  const [backgroundColors, setBackgroundColors] = useState<string[]>( [] );
+  const [mounted, setMounted] = useState(false);
+  const [backgroundColors, setBackgroundColors] = useState<string[]>([]);
   const { open } = useSidebar();
 
-  useEffect( () => {
-    setMounted( true );
-  }, [] );
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
-  useEffect( () => {
-    if ( !mounted ) return;
+  useEffect(() => {
+    if (!mounted) return;
 
     const updateColors = () => {
-      setBackgroundColors( [
-        getCSSVariable( "--chart-1" ),
-        getCSSVariable( "--chart-2" ),
-        getCSSVariable( "--chart-3" ),
-        getCSSVariable( "--chart-4" ),
-        getCSSVariable( "--chart-5" ),
-      ] );
+      setBackgroundColors([
+        getCSSVariable("--chart-1"),
+        getCSSVariable("--chart-2"),
+        getCSSVariable("--chart-3"),
+        getCSSVariable("--chart-4"),
+        getCSSVariable("--chart-5"),
+      ]);
     };
 
     updateColors();
-  }, [theme, mounted] );
+  }, [theme, mounted]);
 
-  const totalValue = dataSource.reduce( ( acc, item ) => acc + item.value, 0 );
+  const totalValue = dataSource.reduce((acc, item) => acc + item.value, 0);
 
   const chartData = {
-    labels: dataSource.map( ( item ) => item.name ),
+    labels: dataSource.map((item) => item.name),
     datasets: [
       {
-        data: dataSource.map( ( item ) => item.value ),
+        data: dataSource.map((item) => item.value),
         backgroundColor: backgroundColors,
-        borderWidth: 1,
+        borderWidth: 0,
       },
     ],
   };
@@ -73,7 +73,7 @@ const DoughnutChartLabel = () => {
         position: "bottom",
         align: "start",
         labels: {
-          color: "#333",
+          color: getCSSVariable("--foreground"),
           boxWidth: 15,
           boxHeight: 10,
           usePointStyle: true,
@@ -83,11 +83,11 @@ const DoughnutChartLabel = () => {
       },
       tooltip: {
         callbacks: {
-          label: function ( context ) {
+          label: function (context) {
             const label = context.label || "";
             const value = context.raw as number;
-            const percentage = ( ( value / totalValue ) * 100 ).toFixed( 2 ) + "%";
-            return `${ label }: ${ percentage }`;
+            const percentage = ((value / totalValue) * 100).toFixed(2) + "%";
+            return `${label}: ${percentage}`;
           },
         },
       },
@@ -97,9 +97,9 @@ const DoughnutChartLabel = () => {
           size: 14,
           weight: "bold",
         },
-        formatter: ( value: number ) => {
-          const percentage = ( ( value / totalValue ) * 100 ).toFixed( 2 );
-          return `${ percentage }%`;
+        formatter: (value: number) => {
+          const percentage = ((value / totalValue) * 100).toFixed(2);
+          return `${percentage}%`;
         },
         anchor: "center",
         align: "center",
@@ -107,10 +107,14 @@ const DoughnutChartLabel = () => {
     },
   };
 
-  if ( !mounted ) return null;
+  if (!mounted) return null;
 
   return (
-    <div className={open ? "mx-auto w-[400px] h-[400px]" : "mx-auto w-[500px] h-[500px]"}>
+    <div
+      className={
+        open ? "mx-auto w-[400px] h-[400px]" : "mx-auto w-[500px] h-[500px]"
+      }
+    >
       <Doughnut data={chartData} options={options} />
     </div>
   );
