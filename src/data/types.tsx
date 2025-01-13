@@ -1,11 +1,15 @@
-import { LucideProps } from 'lucide-react';
-import { ForwardRefExoticComponent, RefAttributes } from 'react';
-import { IconType } from 'react-icons/lib';
+import { LucideProps } from "lucide-react";
+import { ForwardRefExoticComponent, RefAttributes } from "react";
+import { IconType } from "react-icons/lib";
 
 export interface navItem {
   title: string;
   url?: string;
-  icon: ForwardRefExoticComponent<Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>> | IconType;
+  icon:
+    | ForwardRefExoticComponent<
+        Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>
+      >
+    | IconType;
   items?: navSubItem[];
 }
 
@@ -15,28 +19,58 @@ export interface navSubItem {
 }
 
 export interface staffInfo {
-  id: number;
-  name: string;
-  role: string;
-  bio: string;
-  image: string;
-  icons: string[];
-  moreInfo?: {
-    text: string;
-    images: string[];
-  };
+  category: string;
+  members: {
+    name: string;
+    role: string;
+    bio: string;
+    image: string;
+    icons:
+      | ForwardRefExoticComponent<
+          Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>
+        >[]
+      | IconType[];
+    moreInfo?: {
+      text: string;
+      images: string[];
+    };
+  }[];
 }
 
 export interface programInfo {
   title: string;
-  icons: ForwardRefExoticComponent<Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>>[] | IconType[];
+  image: string;
+  icons:
+    | ForwardRefExoticComponent<
+        Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>
+      >[]
+    | IconType[];
   description: string;
+  overview: string;
+  keypoints: string[];
+  outcome: string;
+  goal: string;
+  images: string[];
 }
 
 export interface testimonialsInfo {
   name: string;
   title: string;
   school: string;
+  image: string;
   class: string;
   text: string;
+}
+
+export interface showcaseInfo {
+  subject: string;
+  works: {
+    title: string;
+    author: string;
+    date: string;
+    description: string;
+    preview?: string;
+    writing?: string;
+    images?: string[];
+  }[];
 }
