@@ -1,11 +1,12 @@
 "use client";
 
+import { RequestForm } from "@/components/RequestForm";
 import { ShowcaseDetails, ShowcaseNavigation } from "@/components/StudentWork";
 import { FC } from "react";
 
 const Showcase: FC = () => {
   return (
-    <main className="mx-auto px-4 py-8">
+    <main className="mx-auto px-4 py-8 w-11/12">
       <section className=" mb-12">
         <h1 className="my-4 text-balance uppercase font-Luckiest tracking-wider lg:text-4xl text-lg text-secondary font-extrabold text-center">
           Showcasing Children's Creativity
@@ -36,6 +37,10 @@ const Showcase: FC = () => {
 
       <section className="mb-12">
         <ShowcaseDetails />
+      </section>
+
+      <section className="mb-12">
+        <RequestForm />
       </section>
     </main>
   );

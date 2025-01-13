@@ -2,7 +2,6 @@
 
 import LogoCloud from "@/components/LogoCloud";
 import { Button } from "@/components/ui/button";
-import { useSidebar } from "@/components/ui/sidebar";
 import { LuArrowBigRightDash } from "react-icons/lu";
 import { useRouter } from "next/navigation";
 import { FC } from "react";
@@ -14,10 +13,9 @@ import {
 } from "react-icons/fa";
 
 const SchoolsInfo: FC = () => {
-  const { open } = useSidebar();
   const router = useRouter();
   return (
-    <main className="mx-auto px-4 py-8">
+    <main className="mx-auto px-4 py-8 w-11/12">
       <section className="mb-12">
         <h1 className="my-4 text-balance uppercase font-Luckiest tracking-wider lg:text-4xl text-lg text-secondary font-extrabold text-center">
           Our Partners
@@ -142,13 +140,7 @@ const SchoolsInfo: FC = () => {
           .
         </p>
 
-        <div
-          className={
-            open
-              ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-2 font-Cute_Rabbit text-lg"
-              : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-2 font-Cute_Rabbit text-2xl"
-          }
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-2 font-Cute_Rabbit text-lg lg:text-2xl">
           <div className="flex flex-col items-center text-center gap-3">
             <div className="bg-chart-1 w-fit p-2 rounded-md mx-auto">
               <FaCalendarAlt className="w-8 h-8" />

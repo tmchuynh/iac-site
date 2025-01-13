@@ -1,16 +1,14 @@
 "use client";
 
 import { NavSidebar } from "@/components/NavSidebar";
-import {
-  SidebarProvider,
-  SidebarTrigger,
-  useSidebar,
-} from "@/components/ui/sidebar";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import Head from "next/head";
 import React from "react";
 import { NotFoundProvider, useNotFound } from "./context/NotFoundContext";
 import "./globals.css";
 import { Providers } from "./providers";
+import MenuBar from "@/components/ui/menu";
+import Banner from "@/components/ui/banner";
 
 export default function RootLayout({
   children,
@@ -38,11 +36,13 @@ export default function RootLayout({
       </Head>
       <body>
         <NotFoundProvider>
-          <SidebarProvider>
-            <Providers>
-              <MainContent>{children}</MainContent>
-            </Providers>
-          </SidebarProvider>
+          <Providers>
+            <MainContent>
+              <MenuBar />
+              {children}
+              <Banner />
+            </MainContent>
+          </Providers>
         </NotFoundProvider>
       </body>
     </html>
@@ -50,24 +50,9 @@ export default function RootLayout({
 }
 
 const MainContent = ({ children }: { children: React.ReactNode }) => {
-  const { isNotFound } = useNotFound();
-  const { open } = useSidebar();
-
   return (
     <>
-      {!isNotFound && (
-        <>
-          <NavSidebar />
-          <SidebarTrigger
-            className={
-              open
-                ? "py-10 pl-5 pr-4 sticky top-5 hover:border-none"
-                : "py-10 pl-10 pr-4 sticky top-5 hover:border-none"
-            }
-          />
-        </>
-      )}
-      <main className="relative w-11/12 mx-auto py-10 pr-5">{children}</main>
+      <main className="relative mx-auto">{children}</main>
     </>
   );
 };

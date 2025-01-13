@@ -2,8 +2,8 @@
 
 import DoughnutChart from "@/components/PieChart";
 import { ProgramDetails } from "@/components/ProgramDetails";
+import { RequestForm } from "@/components/RequestForm";
 import { Button } from "@/components/ui/button";
-import { useSidebar } from "@/components/ui/sidebar";
 import { programs } from "@/data/data";
 import { useRouter } from "next/navigation";
 import { FC } from "react";
@@ -18,10 +18,9 @@ import { LuArrowBigRightDash } from "react-icons/lu";
 
 const ProgramsPage: FC = () => {
   const router = useRouter();
-  const { open } = useSidebar();
 
   return (
-    <main className="mx-auto px-4 py-8">
+    <main className="mx-auto px-4 py-8 w-11/12">
       <section className="mb-5">
         <h1 className="my-4 text-balance uppercase font-Luckiest tracking-wider lg:text-4xl text-lg text-secondary font-extrabold text-center">
           About Our Classes
@@ -29,12 +28,20 @@ const ProgramsPage: FC = () => {
         <div className="flex gap-x-4 flex-wrap pb-5">
           {programs.map((program, index) => (
             <Button
+              key={index}
               variant={"outline"}
               size={"sm"}
               onClick={() => router.push(`/info/showcase#${index}`)}
               className="mt-2 group"
             >
-              {program.title}
+              {program.icons.map((Icon, index) =>
+                index === 0 ? (
+                  <span key={index} className="inline-block w-4 h-4 mr-2">
+                    <Icon />
+                  </span>
+                ) : null
+              )}
+              <div className="mt-1">{program.title}</div>
             </Button>
           ))}
         </div>
@@ -46,7 +53,7 @@ const ProgramsPage: FC = () => {
         </p>
       </section>
 
-      <section className="mb-5">
+      <section className="mb-10">
         <DoughnutChart />
         <ul className="py-2 flex flex-col gap-3">
           {[
@@ -103,7 +110,7 @@ const ProgramsPage: FC = () => {
 
         <Button
           onClick={() => router.push("/info/schools")}
-          className="w-2/5 group"
+          className="w-1/4 group"
         >
           More About Our Curriculum
           <span className="inline-block transition-transform duration-300 ease-in-out group-hover:translate-x-2">
@@ -112,14 +119,8 @@ const ProgramsPage: FC = () => {
         </Button>
       </section>
 
-      <section className="mb-12">
-        <div
-          className={
-            open
-              ? "grid grid-cols-1 md:grid-cols-2 py-2 uppercase text-md gap-2 font-Cute_Rabbit text-2xl"
-              : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 py-2 uppercase gap-2 font-Cute_Rabbit text-2xl"
-          }
-        >
+      <section className="mb-12 mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 py-2 uppercase gap-2 text-lg lg:text-sm">
           <div className="flex flex-col items-center text-center gap-3">
             <div className="bg-chart-1 w-fit p-2 rounded-md mx-auto">
               <FaMedal className="w-8 h-8" />
@@ -149,6 +150,10 @@ const ProgramsPage: FC = () => {
 
       <section className="mb-12">
         <ProgramDetails />
+      </section>
+
+      <section className="mb-12 border-t">
+        <RequestForm />
       </section>
     </main>
   );
