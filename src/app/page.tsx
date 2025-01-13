@@ -74,7 +74,7 @@ export default function Home() {
             <li key={index} className="grid grid-cols-12">
               <FaChalkboardTeacher className="text-chart-5 col-span-1 mt-1 text-xl mx-auto" />
               <div className="col-span-11">
-                <span className="font-semibold font-Chicle tracking-widest">
+                <span className="font-semibold font-Cute_Rabbit tracking-widest">
                   {item.title}
                 </span>{" "}
                 {item.description}

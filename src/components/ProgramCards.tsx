@@ -12,31 +12,50 @@ import {
 } from "./ui/card";
 import { programs } from "@/data/data";
 import { useSidebar } from "./ui/sidebar";
+import { LuArrowBigRightDash } from "react-icons/lu";
 
 export default function ProgramCards() {
   const router = useRouter();
   const { open } = useSidebar();
 
   return (
-    <section className={open ? "mb-12 grid grid-cols-2 gap-3" : "mb-12 grid grid-cols-3 gap-3"}>
-      {programs.map( ( program, index ) => (
-        <Card key={index} className={
-          open
-            ? "grid grid-rows-2"
-            : index % 2 === 0
-              ? "grid grid-rows-2 bg-muted"
+    <section
+      className={
+        open ? "mb-12 grid grid-cols-2 gap-3" : "mb-12 grid grid-cols-3 gap-3"
+      }
+    >
+      {programs.map((program, index) => (
+        <Card
+          key={index}
+          className={
+            open
+              ? "grid grid-rows-2"
+              : index % 2 === 0
+              ? "grid grid-rows-2 bg-background"
               : "grid grid-rows-2"
-        }>
-          <CardHeader className="row-span-2">
-            <CardTitle>{program.title}</CardTitle>
-            <CardDescription>{program.description}</CardDescription>
-            <Button
-              className="p-1 w-fit"
-              variant={"link"}
-              onClick={() => router.push( "/register" )}
-            >
-              More Information
-            </Button>
+          }
+        >
+          <CardHeader className="row-span-2 flex flex-col justify-between gap-1">
+            <div>
+              <CardTitle>{program.title}</CardTitle>
+              <CardDescription>{program.description}</CardDescription>
+            </div>
+            <div className="flex flex-wrap gap-2 justify-around">
+              {program.icons.map((Icon, idx) => (
+                <Icon
+                  key={idx}
+                  className={
+                    idx % 2 === 0
+                      ? idx % 5 === 0
+                        ? "text-xl text-chart-5"
+                        : "text-xl text-chart-1"
+                      : idx % 3 === 0
+                      ? "text-xl text-chart-3"
+                      : "text-xl text-chart-2"
+                  }
+                />
+              ))}
+            </div>
           </CardHeader>
           <CardContent className="h-48">
             <img
@@ -45,13 +64,22 @@ export default function ProgramCards() {
               className="w-full pb-5 h-48 object-cover object-center"
             />
           </CardContent>
-          <CardFooter className="flex flex-wrap gap-2 justify-around">
-            {program.icons.map( ( Icon, idx ) => (
-              <Icon key={idx} className={idx % 2 === 0 ? ( idx % 5 === 0 ? "text-xl text-chart-5" : "text-xl text-chart-1" ) : ( idx % 3 === 0 ? "text-xl text-chart-3" : "text-xl text-chart-2" )} />
-            ) )}
+          <CardFooter>
+            <Button
+              variant={
+                open ? "secondary" : index % 2 === 0 ? "outline" : "default"
+              }
+              onClick={() => router.push(`/info/programs#${index}`)}
+              className="w-full group"
+            >
+              More Information
+              <span className="inline-block transition-transform duration-300 ease-in-out group-hover:translate-x-4">
+                <LuArrowBigRightDash />
+              </span>
+            </Button>
           </CardFooter>
         </Card>
-      ) )}
+      ))}
     </section>
   );
 }
