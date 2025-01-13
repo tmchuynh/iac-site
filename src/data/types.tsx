@@ -23,7 +23,7 @@ export interface staffInfo {
   members: {
     name: string;
     role: string;
-    bio: string;
+    bio?: string;
     image: string;
     icons:
       | ForwardRefExoticComponent<

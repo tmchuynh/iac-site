@@ -1,4 +1,5 @@
-import { House, icons, Info, Send } from "lucide-react";
+import { ChartPieIcon, House, Info, Send } from "lucide-react";
+import { PiDiscoBall } from "react-icons/pi";
 import {
   FaChess,
   FaBasketballBall,
@@ -21,6 +22,7 @@ import { FaPencil } from "react-icons/fa6";
 import {
   GiAmericanFootballHelmet,
   GiBasketballJersey,
+  GiMicrophone,
   GiWhistle,
 } from "react-icons/gi";
 import { TfiWrite } from "react-icons/tfi";
@@ -36,6 +38,49 @@ import {
   staffInfo,
   testimonialsInfo,
 } from "./types";
+import { IoMusicalNotes, IoMusicalNoteSharp } from "react-icons/io5";
+
+export const programsMenu = [
+  {
+    name: "Program Information",
+    description: "Get a better understanding of your traffic",
+    href: "/info/programs",
+    icon: ChartPieIcon,
+  },
+  {
+    name: "Our Commitment",
+    description: "Speak directly to your customers",
+    href: "/info/commitment",
+    icon: ChartPieIcon,
+  },
+  {
+    name: "Student Showcase",
+    description: "Your customers’ data will be safe and secure",
+    href: "/info/showcase",
+    icon: ChartPieIcon,
+  },
+  {
+    name: "Information for Schools",
+    description: "Connect with third-party tools",
+    href: "/info/schools",
+    icon: ChartPieIcon,
+  },
+];
+
+export const aboutMenu = [
+  {
+    name: "Our Mission",
+    description: "Get a better understanding of your traffic",
+    href: "/about/iac",
+    icon: ChartPieIcon,
+  },
+  {
+    name: "Staff",
+    description: "Speak directly to your customers",
+    href: "/about/staff",
+    icon: ChartPieIcon,
+  },
+];
 
 export const navBar = {
   navMain: [
@@ -98,7 +143,7 @@ export const programs: programInfo[] = [
       FaChessQueen,
       FaChessRook,
     ],
-    image: "/images/chessboard.jpg",
+    image: "/images/Class_Photos/Chess/chess-40.jpg",
     description:
       "Dive into the world of chess and unleash your potential for strategic mastery, honing your critical thinking and tactical brilliance every step of the way.",
     overview:
@@ -135,7 +180,7 @@ export const programs: programInfo[] = [
   {
     title: "Basketball",
     icons: [FaBasketballBall, GiBasketballJersey],
-    image: "/images/basketball.jpg",
+    image: "/images/Class_Photos/Basketball/bb-18.jpg",
     description:
       "Master the court with our basketball classes, where skill and strategy come together in an electrifying blend of teamwork and excitement.",
     overview:
@@ -170,7 +215,7 @@ export const programs: programInfo[] = [
   {
     title: "Volleyball",
     icons: [FaVolleyballBall, MdTimer],
-    image: "/images/volleyball.jpg",
+    image: "/images/Class_Photos/Volleyball/vb-6.JPG",
     description:
       "Set, spike, and serve your way to volleyball mastery, where precision, strategy, and sportsmanship come together for an unbeatable experience.",
     overview:
@@ -219,7 +264,7 @@ export const programs: programInfo[] = [
   {
     title: "Soccer",
     icons: [MdOutlineSportsSoccer, GiWhistle],
-    image: "/images/soccer.jpg",
+    image: "/images/Class_Photos/Soccer/soccer-9.jpg",
     description:
       "Step onto the field and elevate your game, sharpening your skills while embracing the spirit of teamwork and strategic play.",
     overview:
@@ -250,9 +295,75 @@ export const programs: programInfo[] = [
     ],
   },
   {
+    title: "Creative Writing",
+    icons: [FaPencil, TfiWrite, MdOutlineFormatQuote],
+    image: "/images/Class_Photos/Creative_Writing/CW_2.jpg",
+    description:
+      "Unleash your imagination and bring your ideas to life by transforming them into compelling narratives through the art of writing.",
+    overview:
+      "Our Creative Writing Classes are designed to transcend conventional writing instruction by fostering creativity and nurturing a lifelong passion for writing. We aim to equip students with essential writing skills for academic success while emphasizing that writing is a profound journey of self-discovery and self-expression",
+    keypoints: [
+      "Exploring the Functions and Values of Writing: We introduce students to the practical applications of writing, demonstrating how it serves as a crucial skill in both academic and real-world contexts. This exploration helps students appreciate writing's role beyond the classroom",
+      "Grammar Mastery: Students will acquire a solid understanding of grammar fundamentals, including correct sentence structure, punctuation, and usage. Mastery of these elements forms the bedrock of effective writing and communication",
+      "Writing Prompts and Story Organization: To ignite creativity, students will engage with diverse writing prompts and learn to organize their thoughts into coherent, compelling narratives. We guide them through outlining and structuring stories, emphasizing clarity and creativity",
+      "Fostering Artistic Expression: We encourage students to embrace their artistic side by exploring various writing styles and genres. This approach allows them to express themselves through different creative mediums, enhancing their versatility as writers",
+      "Stimulating Imagination: Our classes feature exercises and activities designed to stimulate students' imaginations. By encouraging creative thinking and unique story development, we help students expand their narrative possibilities",
+      "Verbs and Adjectives in Descriptive Writing: Students will focus on using vivid verbs and descriptive adjectives to enrich their writing. This skill will enable them to craft more engaging, detailed, and evocative narratives",
+    ],
+    outcome:
+      "We are committed to helping students explore the vast landscapes of their thoughts and create vivid imagery with words. Our goal is to inspire a lifelong love of writing, viewing it as a journey that evolves and expands over time. Through this creative process, students will develop the ability to captivate and resonate with others, enhancing their literary and personal expression.",
+    goal: "Our commitment extends beyond the classroom, aiming to instill a profound and enduring love for writing that enriches both academic and personal lives. We view writing as a source of solace, a medium for documenting experiences, and a channel for artistic expression. Our program aspires to ignite and sustain each student's creative flame, seeing writing as a canvas for thoughts, emotions, and ideas—a faithful outlet for inner musings and a means of sharing unique perspectives with the world.",
+    images: [
+      "/images/Class_Photos/Creative_Writing/CW_1.jpg",
+      "/images/Class_Photos/Creative_Writing/CW_2.jpg",
+    ],
+  },
+  {
+    title: "Public Speaking",
+    icons: [FaMicrophone, FaUsers, GiMicrophone],
+    image: "/images/public_speaking.jpg",
+    description:
+      "Master the art of effective communication and captivate your audience with confidence and poise in our public speaking classes",
+    overview:
+      "Our Public Speaking Classes are designed to empower individuals with the skills and confidence needed to communicate effectively in any setting. Through engaging lessons and practical exercises, we aim to transform public speaking into a powerful tool for self-expression, persuasion, and connection. This program focuses on building communication skills, enhancing confidence, and developing techniques to deliver impactful speeches in various settings.",
+    keypoints: [
+      "Understanding the Fundamentals of Public Speaking: We introduce students to the principles of effective communication, focusing on clarity, engagement, and audience connection. This foundation helps students build confidence and reduce anxiety",
+      "Voice Modulation and Tone: Students will learn how to use their voice as a powerful tool, mastering techniques like modulation, pitch variation, and pacing to convey their message with impact and authenticity",
+      "Structuring Compelling Speeches: We guide students in organizing their thoughts into well-structured presentations. This includes crafting engaging introductions, clear main points, and memorable conclusions to leave a lasting impression",
+      "Nonverbal Communication: Emphasis is placed on body language, eye contact, and facial expressions to complement verbal delivery and create a strong presence on stage",
+      "Impromptu Speaking Skills: Through dynamic exercises, students will practice thinking on their feet, responding to unexpected questions, and delivering speeches without preparation, building confidence for any scenario",
+      "Persuasion and Storytelling: Students will explore the art of persuasion and learn how to weave compelling stories into their speeches to captivate and inspire their audience",
+    ],
+    outcome:
+      "Students will confidently deliver clear and impactful speeches, enhancing their communication skills for academic, personal, and professional success. Our classes are designed to help students overcome the fear of public speaking and embrace it as an opportunity to share their voice. By mastering key communication techniques, students will develop the ability to engage and inspire audiences, confidently express their ideas, and leave a lasting impression in any setting.",
+    goal: "Beyond mastering the technical skills of public speaking, our program aims to instill a deeper appreciation for the power of words and the importance of authentic communication. We strive to help each student discover their unique voice and use it to connect with others, share their story, and make an impact. Whether presenting in a boardroom, on stage, or in everyday conversations, our goal is to inspire confidence and creativity, empowering students to speak with purpose and passion.",
+    images: [],
+  },
+  {
+    title: "Comic Book",
+    icons: [FaPencilAlt, FaBook, MdOutlineBrush],
+    image: "/images/Comic_Book.png",
+    description:
+      "Dive into the world of storytelling and art by creating your own comic book, blending imagination with illustration",
+    overview:
+      "This class encourages creativity through the exploration of storytelling, character design, and comic book illustration techniques. This class is designed to celebrate the artistry, creativity, and cultural impact of comic books while fostering a deeper appreciation for the medium. Whether you're a lifelong fan or new to the world of comics, our club is a place to explore, create, and connect.",
+    keypoints: [
+      "History and Evolution of Comics: Dive into the rich history of comic books, from their golden age origins to modern-day masterpieces. Explore the cultural milestones, iconic creators, and groundbreaking works that have defined the medium",
+      "Artistic Techniques: Learn the fundamentals of comic book art, including panel composition, character design, and visual storytelling. Whether you’re sketching superheroes or crafting vibrant settings, this class will sharpen your artistic skills",
+      "Scriptwriting and Story Development: Discover the art of writing compelling comic book scripts. From creating dynamic characters to crafting engaging plots, we guide you through the process of bringing your stories to life",
+      "Exploring Genres and Themes: Comic books are more than capes and tights. Explore diverse genres such as sci-fi, fantasy, mystery, and slice-of-life, and discuss the themes and narratives that make them resonate with readers",
+      "Collaboration and Creation: Team up with fellow club members to create original comic book projects. Share ideas, combine talents, and bring your collective vision to life in a supportive, collaborative environment",
+      "Critical Discussions and Reviews: Engage in thoughtful discussions about iconic comic book works, analyzing storytelling techniques, themes, and artistic styles. Develop your ability to critique and appreciate the medium at a deeper level",
+    ],
+    outcome:
+      "Students will create their own comic book, combining storytelling and art skills to bring their unique vision to life. By the end of the class, members will have a comprehensive understanding of the comic book medium, from its artistic and literary elements to its cultural significance. Students will develop skills in storytelling, art, and analysis, while also fostering a sense of community and collaboration with fellow enthusiasts. Most importantly, they’ll discover the power of comics to inspire, entertain, and connect people from all walks of life.",
+    goal: "Our mission is to cultivate a lifelong love for comic books while empowering students to create their own stories. We aim to celebrate the artistry, innovation, and cultural impact of this unique medium, encouraging members to see comics as both a powerful storytelling tool and a form of personal expression. Whether creating, analyzing, or simply enjoying comics, this club is a space to celebrate creativity and forge connections with fellow enthusiasts.",
+    images: [],
+  },
+  {
     title: "Performing Arts",
     icons: [FaTheaterMasks],
-    image: "/images/theater.jpg",
+    image: "/images/Class_Photos/Performing_Arts/pa-5.jpg",
     description:
       "Learn to play theater and masks with our theater and masks classes, where skill and creativity come together in an exciting blend of artistic expression and creative problem-solving.",
     overview:
@@ -282,8 +393,8 @@ export const programs: programInfo[] = [
   },
   {
     title: "Dance",
-    icons: [FaTheaterMasks],
-    image: "/images/theater.jpg",
+    icons: [IoMusicalNotes, PiDiscoBall, IoMusicalNoteSharp],
+    image: "/images/Class_Photos/Dance/dance-3.JPG",
     description:
       "Explore the joy of movement and rhythm in our dance classes, where technique, creativity, and expression come together to create a dynamic and inspiring experience.",
     overview:
@@ -330,72 +441,6 @@ export const programs: programInfo[] = [
     outcome:
       "Students will gain a robust understanding of web development fundamentals and practical coding skills through engaging, game-based projects. They will develop problem-solving abilities, algorithmic thinking, and collaborative skills, preparing them for further studies and future careers in technology.",
     goal: "Our goal is to foster a lifelong passion for coding and web development. We aim to instill problem-solving skills, logical thinking, and creative innovation that extend beyond programming. By integrating game-based learning, we make coding enjoyable and accessible, preparing students for success in the tech industry and beyond. We envision a future where students are not only skilled coders but also enthusiastic creators, continually exploring and innovating in the world of technology.",
-    images: [],
-  },
-  {
-    title: "Creative Writing",
-    icons: [FaPencil, TfiWrite, MdOutlineFormatQuote],
-    image: "/images/creativewriting.jpg",
-    description:
-      "Unleash your imagination and bring your ideas to life by transforming them into compelling narratives through the art of writing.",
-    overview:
-      "Our Creative Writing Classes are designed to transcend conventional writing instruction by fostering creativity and nurturing a lifelong passion for writing. We aim to equip students with essential writing skills for academic success while emphasizing that writing is a profound journey of self-discovery and self-expression",
-    keypoints: [
-      "Exploring the Functions and Values of Writing: We introduce students to the practical applications of writing, demonstrating how it serves as a crucial skill in both academic and real-world contexts. This exploration helps students appreciate writing's role beyond the classroom",
-      "Grammar Mastery: Students will acquire a solid understanding of grammar fundamentals, including correct sentence structure, punctuation, and usage. Mastery of these elements forms the bedrock of effective writing and communication",
-      "Writing Prompts and Story Organization: To ignite creativity, students will engage with diverse writing prompts and learn to organize their thoughts into coherent, compelling narratives. We guide them through outlining and structuring stories, emphasizing clarity and creativity",
-      "Fostering Artistic Expression: We encourage students to embrace their artistic side by exploring various writing styles and genres. This approach allows them to express themselves through different creative mediums, enhancing their versatility as writers",
-      "Stimulating Imagination: Our classes feature exercises and activities designed to stimulate students' imaginations. By encouraging creative thinking and unique story development, we help students expand their narrative possibilities",
-      "Verbs and Adjectives in Descriptive Writing: Students will focus on using vivid verbs and descriptive adjectives to enrich their writing. This skill will enable them to craft more engaging, detailed, and evocative narratives",
-    ],
-    outcome:
-      "We are committed to helping students explore the vast landscapes of their thoughts and create vivid imagery with words. Our goal is to inspire a lifelong love of writing, viewing it as a journey that evolves and expands over time. Through this creative process, students will develop the ability to captivate and resonate with others, enhancing their literary and personal expression.",
-    goal: "Our commitment extends beyond the classroom, aiming to instill a profound and enduring love for writing that enriches both academic and personal lives. We view writing as a source of solace, a medium for documenting experiences, and a channel for artistic expression. Our program aspires to ignite and sustain each student's creative flame, seeing writing as a canvas for thoughts, emotions, and ideas—a faithful outlet for inner musings and a means of sharing unique perspectives with the world.",
-    images: [
-      "/images/Class_Photos/Creative_Writing/CW_1.jpg",
-      "/images/Class_Photos/Creative_Writing/CW_2.jpg",
-    ],
-  },
-  {
-    title: "Public Speaking",
-    icons: [FaMicrophone, FaUsers],
-    image: "/images/creativewriting.jpg",
-    description:
-      "Master the art of effective communication and captivate your audience with confidence and poise in our public speaking classes",
-    overview:
-      "Our Public Speaking Classes are designed to empower individuals with the skills and confidence needed to communicate effectively in any setting. Through engaging lessons and practical exercises, we aim to transform public speaking into a powerful tool for self-expression, persuasion, and connection. This program focuses on building communication skills, enhancing confidence, and developing techniques to deliver impactful speeches in various settings.",
-    keypoints: [
-      "Understanding the Fundamentals of Public Speaking: We introduce students to the principles of effective communication, focusing on clarity, engagement, and audience connection. This foundation helps students build confidence and reduce anxiety",
-      "Voice Modulation and Tone: Students will learn how to use their voice as a powerful tool, mastering techniques like modulation, pitch variation, and pacing to convey their message with impact and authenticity",
-      "Structuring Compelling Speeches: We guide students in organizing their thoughts into well-structured presentations. This includes crafting engaging introductions, clear main points, and memorable conclusions to leave a lasting impression",
-      "Nonverbal Communication: Emphasis is placed on body language, eye contact, and facial expressions to complement verbal delivery and create a strong presence on stage",
-      "Impromptu Speaking Skills: Through dynamic exercises, students will practice thinking on their feet, responding to unexpected questions, and delivering speeches without preparation, building confidence for any scenario",
-      "Persuasion and Storytelling: Students will explore the art of persuasion and learn how to weave compelling stories into their speeches to captivate and inspire their audience",
-    ],
-    outcome:
-      "Students will confidently deliver clear and impactful speeches, enhancing their communication skills for academic, personal, and professional success. Our classes are designed to help students overcome the fear of public speaking and embrace it as an opportunity to share their voice. By mastering key communication techniques, students will develop the ability to engage and inspire audiences, confidently express their ideas, and leave a lasting impression in any setting.",
-    goal: "Beyond mastering the technical skills of public speaking, our program aims to instill a deeper appreciation for the power of words and the importance of authentic communication. We strive to help each student discover their unique voice and use it to connect with others, share their story, and make an impact. Whether presenting in a boardroom, on stage, or in everyday conversations, our goal is to inspire confidence and creativity, empowering students to speak with purpose and passion.",
-    images: [],
-  },
-  {
-    title: "Comic Book",
-    icons: [FaPencilAlt, FaBook, MdOutlineBrush],
-    image: "/images/creativewriting.jpg",
-    description:
-      "Dive into the world of storytelling and art by creating your own comic book, blending imagination with illustration",
-    overview:
-      "This class encourages creativity through the exploration of storytelling, character design, and comic book illustration techniques. This class is designed to celebrate the artistry, creativity, and cultural impact of comic books while fostering a deeper appreciation for the medium. Whether you're a lifelong fan or new to the world of comics, our club is a place to explore, create, and connect.",
-    keypoints: [
-      "History and Evolution of Comics: Dive into the rich history of comic books, from their golden age origins to modern-day masterpieces. Explore the cultural milestones, iconic creators, and groundbreaking works that have defined the medium",
-      "Artistic Techniques: Learn the fundamentals of comic book art, including panel composition, character design, and visual storytelling. Whether you’re sketching superheroes or crafting vibrant settings, this class will sharpen your artistic skills",
-      "Scriptwriting and Story Development: Discover the art of writing compelling comic book scripts. From creating dynamic characters to crafting engaging plots, we guide you through the process of bringing your stories to life",
-      "Exploring Genres and Themes: Comic books are more than capes and tights. Explore diverse genres such as sci-fi, fantasy, mystery, and slice-of-life, and discuss the themes and narratives that make them resonate with readers",
-      "Collaboration and Creation: Team up with fellow club members to create original comic book projects. Share ideas, combine talents, and bring your collective vision to life in a supportive, collaborative environment",
-      "Critical Discussions and Reviews: Engage in thoughtful discussions about iconic comic book works, analyzing storytelling techniques, themes, and artistic styles. Develop your ability to critique and appreciate the medium at a deeper level",
-    ],
-    outcome:
-      "Students will create their own comic book, combining storytelling and art skills to bring their unique vision to life. By the end of the class, members will have a comprehensive understanding of the comic book medium, from its artistic and literary elements to its cultural significance. Students will develop skills in storytelling, art, and analysis, while also fostering a sense of community and collaboration with fellow enthusiasts. Most importantly, they’ll discover the power of comics to inspire, entertain, and connect people from all walks of life.",
-    goal: "Our mission is to cultivate a lifelong love for comic books while empowering students to create their own stories. We aim to celebrate the artistry, innovation, and cultural impact of this unique medium, encouraging members to see comics as both a powerful storytelling tool and a form of personal expression. Whether creating, analyzing, or simply enjoying comics, this club is a space to celebrate creativity and forge connections with fellow enthusiasts.",
     images: [],
   },
 ];
@@ -451,7 +496,7 @@ export const staffCategories: staffInfo[] = [
       {
         name: "Justin Perez",
         role: "Co-Founder/ CEO",
-        bio: "Visionary leader with a passion for education.",
+        bio: "Leads with heart, empowering kids to thrive beyond limits",
         image: "/images/Staff_Photos/Justin_P.jpg",
         icons: [],
         moreInfo: {
@@ -465,7 +510,7 @@ export const staffCategories: staffInfo[] = [
       {
         name: "Jason Perez",
         role: "Co-Founder",
-        bio: "Visionary leader with a passion for education.",
+        bio: "Provides steadfast support to help kids thrive",
         image: "/images/Staff_Photos/Jason_P.jpg",
         icons: [],
         moreInfo: {
@@ -484,7 +529,7 @@ export const staffCategories: staffInfo[] = [
       {
         name: "Tina Huynh",
         role: "Chief Operating Officer",
-        bio: "Dedicated to creating engaging learning experiences.",
+        bio: "Oversees operations, engineering, and administration seamlessly.",
         image: "/images/Staff_Photos/Tina.jpg",
         icons: [FaChess, FaPencil, FaLaptopCode],
         moreInfo: {
@@ -498,7 +543,7 @@ export const staffCategories: staffInfo[] = [
       {
         name: "Mike Ash",
         role: "Director of Chess Operations",
-        bio: "Visionary leader with a passion for education.",
+        bio: "Leads chess operations with expertise and passion, inspiring growth and strategy.",
         image: "/images/Staff_Photos/Mike.jpg",
         icons: [MdOutlineSportsSoccer, FaChess],
         moreInfo: {
@@ -512,7 +557,7 @@ export const staffCategories: staffInfo[] = [
       {
         name: "Tommy Owens",
         role: "Director of Basketball Operations",
-        bio: "Visionary leader with a passion for education.",
+        bio: "Leads basketball operations with dedication and a passion for excellence.",
         image: "/images/Staff_Photos/Tommy.jpg",
         icons: [FaBasketballBall, FaChess],
         moreInfo: {
@@ -526,11 +571,11 @@ export const staffCategories: staffInfo[] = [
       {
         name: "Layla Kurokawa",
         role: "Director of Performing Arts Operations",
-        bio: "Visionary leader with a passion for education.",
+        bio: "Manages performing arts operations with dedication and vision.",
         image: "/images/Staff_Photos/Layla.jpg",
         icons: [FaTheaterMasks, FaLaptopCode],
         moreInfo: {
-          text: "Layla’s role as the Director of Performing Arts Operations at IAC is much more than a job title—it is a testament to her profound impact on the organization. This esteemed position reflects her pivotal contributions that have broadened the scope of IAC, ushering it into the dynamic world of performing arts and drama. Through her visionary leadership, Layla has created new pathways for students to explore their artistic abilities and express themselves creatively. Her influence has opened doors to a realm where students can engage with their passions, fostering a love for the arts that extends beyond the classroom.<br/>One of Layla’s most notable achievements lies in her dedication to mentoring and training new instructors, particularly those specializing in performing arts education. Layla embodies more than just an instructor; she is a mentor who meticulously imparts the values, standards, and high expectations that are the hallmark of IAC’s commitment to educational excellence. Under her expert guidance, new hires receive thorough training that equips them not just to meet but to exceed the company’s standards. Layla’s tireless dedication to nurturing new talent underscores her passion for cultivating future educators and performers who carry forward the principles of creativity and excellence.<br/>Layla’s influence reaches far beyond her own classes, touching every aspect of IAC’s performing arts programs. Her dedication to continuously refining and enhancing these programs ensures that students receive the highest quality education and opportunities. Her passion radiates throughout the institution, enriching students' experiences and nurturing a vibrant, artistic community.Known for her compassionate and inclusive approach, Layla is committed to ensuring that every student feels valued and seen.Her dedication to inclusivity knows no limits—she makes it her mission to accommodate the diverse needs of students, whether they are naturally extroverted or prefer to express themselves more quietly.< br /> In Layla’s classes, education is never a one- size - fits - all approach.She celebrates diversity and emphasizes the unique qualities and strengths of each student.Layla’s belief in the potential of every individual fuels her efforts to create a space where these unique traits can shine.Her dedication comes to life most vividly during the end- of - session showcase.This event is more than a performance; it is a heartfelt celebration of each student’s journey under Layla’s nurturing and attentive guidance.The showcase is designed to spotlight not just a few standout performers but to celebrate every student, acknowledging their growth, talents, and individuality.< br /> In Layla’s classroom, artistic growth is intertwined with the development of confidence and self- esteem.Her philosophy, rooted in the recognition and celebration of individuality, distinguishes her as an extraordinary and compassionate educator.Layla’s students leave her classes not only with enhanced artistic skills but with a newfound sense of self - worth and belief in their abilities.Her approach leaves an indelible mark on the hearts and minds of her students, making her a true beacon of inspiration and an invaluable leader within IAC.",
+          text: "Layla’s role as the Director of Performing Arts Operations at IAC is much more than a job title—it is a testament to her profound impact on the organization. This esteemed position reflects her pivotal contributions that have broadened the scope of IAC, ushering it into the dynamic world of performing arts and drama. Through her visionary leadership, Layla has created new pathways for students to explore their artistic abilities and express themselves creatively. Her influence has opened doors to a realm where students can engage with their passions, fostering a love for the arts that extends beyond the classroom.<br/>One of Layla’s most notable achievements lies in her dedication to mentoring and training new instructors, particularly those specializing in performing arts education. Layla embodies more than just an instructor; she is a mentor who meticulously imparts the values, standards, and high expectations that are the hallmark of IAC’s commitment to educational excellence. Under her expert guidance, new hires receive thorough training that equips them not just to meet but to exceed the company’s standards. Layla’s tireless dedication to nurturing new talent underscores her passion for cultivating future educators and performers who carry forward the principles of creativity and excellence.<br/>Layla’s influence reaches far beyond her own classes, touching every aspect of IAC’s performing arts programs. Her dedication to continuously refining and enhancing these programs ensures that students receive the highest quality education and opportunities. Her passion radiates throughout the institution, enriching students' experiences and nurturing a vibrant, artistic community.Known for her compassionate and inclusive approach, Layla is committed to ensuring that every student feels valued and seen.Her dedication to inclusivity knows no limits—she makes it her mission to accommodate the diverse needs of students, whether they are naturally extroverted or prefer to express themselves more quietly.<br/> In Layla’s classes, education is never a one- size - fits - all approach.She celebrates diversity and emphasizes the unique qualities and strengths of each student.Layla’s belief in the potential of every individual fuels her efforts to create a space where these unique traits can shine.Her dedication comes to life most vividly during the end- of - session showcase.This event is more than a performance; it is a heartfelt celebration of each student’s journey under Layla’s nurturing and attentive guidance.The showcase is designed to spotlight not just a few standout performers but to celebrate every student, acknowledging their growth, talents, and individuality.<br/> In Layla’s classroom, artistic growth is intertwined with the development of confidence and self- esteem.Her philosophy, rooted in the recognition and celebration of individuality, distinguishes her as an extraordinary and compassionate educator.Layla’s students leave her classes not only with enhanced artistic skills but with a newfound sense of self - worth and belief in their abilities.Her approach leaves an indelible mark on the hearts and minds of her students, making her a true beacon of inspiration and an invaluable leader within IAC.",
           images: [
             "/images/staff/john_doe_1.jpg",
             "/images/staff/john_doe_2.jpg",
@@ -540,7 +585,7 @@ export const staffCategories: staffInfo[] = [
       {
         name: "Cory Camama",
         role: "Director of Volleyball Operations",
-        bio: "Visionary leader with a passion for education.",
+        bio: "Oversees volleyball operations with commitment and expertise.",
         image: "/images/Staff_Photos/Cory.jpg",
         icons: [FaVolleyballBall],
         moreInfo: {
@@ -551,7 +596,7 @@ export const staffCategories: staffInfo[] = [
       {
         name: "Jason Michael",
         role: "Technical Advisor",
-        bio: "Visionary leader with a passion for education.",
+        bio: "Provides expert technical guidance and innovative solutions.",
         image: "/images/Staff_Photos/JasonM.jpg",
         icons: [FaLaptopCode],
         moreInfo: {
@@ -565,7 +610,7 @@ export const staffCategories: staffInfo[] = [
       {
         name: "Kimberly Nguyen",
         role: "Director of Honors and Presentations",
-        bio: "Visionary leader with a passion for education.",
+        bio: "Drives employee recognition through impactful presentations.",
         image: "/images/Staff_Photos/Kim.jpg",
         icons: [
           FaBasketballBall,
@@ -589,91 +634,78 @@ export const staffCategories: staffInfo[] = [
       {
         name: "Brian Kile",
         role: "Basketball Instructor",
-        bio: "Visionary leader with a passion for education.",
         image: "/images/Staff_Photos/Brian.jpg",
         icons: [FaBasketballBall, MdOutlineSportsSoccer, FaFootballBall],
       },
       {
         name: "Bailey Johnson",
         role: "Basketball Instructor",
-        bio: "Visionary leader with a passion for education.",
         image: "/images/Staff_Photos/Bailey.jpg",
         icons: [FaBasketballBall],
       },
       {
         name: "David Fuchs",
         role: "Chess Instructor",
-        bio: "Visionary leader with a passion for education.",
         image: "/images/Staff_Photos/David.jpg",
         icons: [FaChess, FaPencil],
       },
       {
         name: "Dominick Pallatto",
         role: "Theater Instructor",
-        bio: "Visionary leader with a passion for education.",
         image: "/images/Staff_Photos/Dominick.jpg",
         icons: [FaChess, FaTheaterMasks],
       },
       {
         name: "Krystal Alexander",
         role: "Theater Instructor",
-        bio: "Visionary leader with a passion for education.",
         image: "/images/Staff_Photos/Krystal.jpg",
         icons: [FaChess, FaPencil, FaTheaterMasks],
       },
       {
         name: "Gabriel Hernandez",
         role: "Chess Instructor",
-        bio: "Visionary leader with a passion for education.",
         image: "/images/Staff_Photos/Gabe.jpg",
         icons: [FaChess, FaPencil, FaTheaterMasks],
       },
       {
         name: "Gino DeFalco",
         role: "Soccer Instructor",
-        bio: "Visionary leader with a passion for education.",
         image: "/images/Staff_Photos/Gino.jpg",
         icons: [MdOutlineSportsSoccer, FaVolleyballBall],
       },
       {
         name: "Jackie Rodriguez",
         role: "Basketball Instructor",
-        bio: "Visionary leader with a passion for education.",
         image: "/images/Staff_Photos/Jackie.jpg",
         icons: [FaBasketballBall, FaVolleyballBall],
       },
       {
         name: "James O'Leary",
         role: "Chess Instructor",
-        bio: "Visionary leader with a passion for education.",
         image: "/images/Staff_Photos/James_O.jpg",
         icons: [FaChess, FaPencil],
       },
       {
         name: "Jenny Dong",
         role: "Volleyball Instructor",
-        bio: "Visionary leader with a passion for education.",
         image: "/images/Staff_Photos/Jenny.jpg",
         icons: [FaVolleyballBall],
       },
       {
         name: "Johnathan",
         role: "Chess Instructor",
-        bio: "Visionary leader with a passion for education.",
         image: "/images/Staff_Photos/Johnathan.jpg",
         icons: [FaChess],
       },
       {
         name: "Tori Balnchard",
         role: "Volleyball Instructor",
-        bio: "Visionary leader with a passion for education.",
         image: "/images/Staff_Photos/staff_photo_default.png",
         icons: [FaVolleyballBall, FaChess, FaPencil, FaTheaterMasks],
       },
       {
         name: "Nnamdi Agude",
         role: "Chess Instructor",
-        bio: "Visionary leader with a passion for education.",
         image: "/images/Staff_Photos/Nnamdi.jpg",
         icons: [FaBasketballBall, FaChess, FaPencil, FaFootballBall],
       },
@@ -685,42 +717,36 @@ export const staffCategories: staffInfo[] = [
       {
         name: "Alex Garber",
         role: "Chess Instructor",
-        bio: "Visionary leader with a passion for education.",
         image: "/images/Staff_Photos/Alex.jpg",
         icons: [FaChess],
       },
       {
         name: "Andy Prendiville",
         role: "Chess Instructor",
-        bio: "Visionary leader with a passion for education.",
         image: "/images/Staff_Photos/Andy.jpg",
         icons: [FaChess],
       },
       {
         name: "Bobby Xiao",
         role: "Chess Instructor",
-        bio: "Visionary leader with a passion for education.",
         image: "/images/Staff_Photos/staff_photo_default.png",
         icons: [FaChess],
       },
       {
         name: "Bodhi Armstrong",
         role: "Basketball Instructor",
-        bio: "Visionary leader with a passion for education.",
         image: "/images/Staff_Photos/staff_photo_default.png",
         icons: [FaBasketballBall],
       },
       {
         name: "James Manley",
         role: "Basketball Instructor",
-        bio: "Visionary leader with a passion for education.",
         image: "/images/Staff_Photos/JasonM.jpg",
         icons: [FaBasketballBall],
       },
       {
         name: "Keshawn Carter",
         role: "Basketball Instructor",
-        bio: "Visionary leader with a passion for education.",
         image: "/images/Staff_Photos/Keshawn.jpg",
         icons: [
           FaBasketballBall,
@@ -732,35 +758,30 @@ export const staffCategories: staffInfo[] = [
       {
         name: "Lawrence Brown",
         role: "Basketball Instructor",
-        bio: "Visionary leader with a passion for education.",
         image: "/images/Staff_Photos/staff_photo_default.png",
         icons: [FaBasketballBall],
       },
       {
         name: "Novaleigh Bui",
         role: "Chess Instructor",
-        bio: "Visionary leader with a passion for education.",
         image: "/images/Staff_Photos/staff_photo_default.png",
         icons: [FaChess],
       },
       {
         name: "Max Evans",
         role: "Basketball Instructor",
-        bio: "Visionary leader with a passion for education.",
         image: "/images/Staff_Photos/Max_Evans.jpg",
         icons: [FaBasketballBall, FaPencil],
       },
       {
         name: "Michael Le",
         role: "Basketball Instructor",
-        bio: "Visionary leader with a passion for education.",
         image: "/images/Staff_Photos/Michael_Le.jpg",
         icons: [FaBasketballBall],
       },
       {
         name: "Zayaan Khan",
         role: "Chess Instructor",
-        bio: "Visionary leader with a passion for education.",
         image: "/images/Staff_Photos/Zayaan.jpg",
         icons: [FaChess],
       },
@@ -772,21 +793,18 @@ export const staffCategories: staffInfo[] = [
       {
         name: "Aldyn Richmond",
         role: "Administration Assistant",
-        bio: "Visionary leader with a passion for education.",
         image: "/images/Staff_Photos/staff_photo_default.png",
         icons: [FaPencil, FaTheaterMasks],
       },
       {
         name: "Jessalyn Nguyen",
         role: "Administration Assistant",
-        bio: "Visionary leader with a passion for education.",
         image: "/images/Staff_Photos/Jessalyn.jpg",
         icons: [FaBasketballBall, MdOutlineSportsSoccer, FaVolleyballBall],
       },
       {
         name: "Middka Vicencio",
         role: "Administration Assistant",
-        bio: "Visionary leader with a passion for education.",
         image: "/images/Staff_Photos/Middka.jpg",
         icons: [FaVolleyballBall],
       },
@@ -842,43 +860,75 @@ export const logos = [
 
 export const testimonials: testimonialsInfo[] = [
   {
-    name: "John Doe",
-    title: "Student",
-    school: "Orchard Hills",
+    name: "Anonymous",
+    title: "Chess Parent",
+    school: "Hicks Canyon Elementary School",
+    class: "Chess",
+    image: "/images/School_Icons/hicks.jpg",
+    text: "...my sons attend Hicks Canyon Elementary and have been in several after-school programs provided by IAC. They always have a great time, and [instructors] always go the extra mile to help my son, Taylor, so he can get the most out of the program. Also, when I was having a financially difficult time last year, [Justin] gave us a big discount, telling me that it was their passion to help out the community. I'm happy to say that I no longer need the financial assistance for the program, but it was so meaningful to feel that someone in the community cared about my kids' well-being and opportunities to experience wholesome activities.",
+  },
+  {
+    name: "Anonymous",
+    title: "Chess Parent",
+    school: "Peters Canyon Elementary School",
     class: "Chess",
     image: "/images/School_Icons/peterscanyon.jpg",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel libero id lectus consectetur consectetur vel non velit. Aliquam erat volutpat.",
+    text: "Due to one of my children's severe food allergies, we have been denied by multiple camps and classes who did not want the risk of having them as a student. However, Justin was very responsive and collaborated with me on ways to adapt the class to be a safe space. Both of my kids love learning about chess and practicing among their peers. I'm excited they are able to learn a game that teaches critical thinking and persistence.",
   },
   {
-    name: "Jane Smith",
-    title: "Teacher",
-    school: "Arroyo",
-    class: "Soccer",
-    image: "/images/School_Icons/redhill.jpg",
-    text: "Proin vel tellus ac neque vulputate gravida. Sed vel libero id lectus consectetur consectetur vel non velit. Aliquam erat volutpat.",
-  },
-  {
-    name: "Michael Johnson",
-    title: "Principal",
-    school: "Fairmont",
-    class: "Creative Writing",
-    image: "/images/School_Icons/hicks.jpg",
-    text: "Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.",
-  },
-  {
-    name: "Sarah Davis",
-    title: "Teacher",
-    school: "Hicks",
+    name: "Anonymous",
+    title: "Chess Parent",
+    school: "Peters Canyon Elementary School",
     class: "Chess",
-    image: "/images/School_Icons/fairmont.jpg",
-    text: "Sed vel libero id lectus consectetur consectetur vel non velit. Aliquam erat volutpat. Proin vel tellus ac neque vulputate gravida.",
+    image: "/images/School_Icons/peterscanyon.jpg",
+    text: "I am at a loss for words; upon reading [Justin's] email, I couldn't help but feel an overwhelming sense of relief. The appreciation of the scholarship is truly a blessing to me, and the many years of [my son's] participation have made such an impact on his life! People like [Justin] really do make such an impact.",
   },
   {
-    name: "Emily Watson",
-    title: "Student",
-    school: "Ladera",
+    name: "Anonymous",
+    title: "Theater Parent",
+    school: "Arroyo Elementary School",
     class: "Theater",
     image: "/images/School_Icons/arroyo.jpg",
-    text: "Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.",
+    text: "Watching my once-shy daughter perform confidently on stage was a dream come true. The theater staff at IAC excel at nurturing talent and fostering self-esteem. Her enthusiasm for school has grown significantly, and she comes home eager to share her experiences.",
+  },
+  {
+    name: "Anonymous",
+    title: "Soccer Parent",
+    school: "Hicks Elementary School",
+    class: "Soccer",
+    image: "/images/School_Icons/hicks.jpg",
+    text: "The soccer program is outstanding! The coaches are highly skilled and serve as excellent role models. The staff ensure that every child feels included and valued, which has greatly boosted my son's confidence. I am deeply grateful to IAC for the peace of mind they provide.",
+  },
+  {
+    name: "Anonymous",
+    title: "Creative Writing Parent",
+    school: "Historic Anaheim Elementary School",
+    class: "Creative Writing",
+    image: "/images/School_Icons/fairmont.jpg",
+    text: "The creative writing program at IAC has been transformative for my daughter. The workshops have elevated her skills to new heights. As a working parent, finding quality after-school care was challenging until we discovered IAC. The diverse range of activities keeps my son engaged, and I greatly value the balance between education and fun that the program offers.",
+  },
+  {
+    name: "Anonymous",
+    title: "School Staff",
+    school: "Peters Canyon Elementary School",
+    class: "Chess",
+    image: "/images/School_Icons/peterscanyon.jpg",
+    text: "IAC's chess program has greatly enhanced student concentration and problem-solving abilities. The staff are patient and create a supportive environment that allows students to thrive, regardless of their skill level. The program reinforces the lessons we teach.",
+  },
+  {
+    name: "Anonymous",
+    title: "School Staff",
+    school: "North Tustin Elementary School",
+    class: "Chess",
+    image: "/images/School_Icons/fairmont.jpg",
+    text: "The chess club facilitated by IAC has become a highlight for many students. The program has significantly improved students' critical thinking skills and had a positive effect on their behavior and social skills.",
+  },
+  {
+    name: "Anonymous",
+    title: "Parent",
+    school: "Hicks Elementary School",
+    class: "Basketball",
+    image: "/images/School_Icons/hicks.jpg",
+    text: "I can’t speak highly enough of the basketball program at IAC. My daughter eagerly looks forward to every practice, excited to develop her abilities and engage with her teammates. The program strikes a perfect balance between skill development, teamwork, and fun.",
   },
 ];
