@@ -12,7 +12,7 @@ export const ProgramDetails: React.FC = () => {
         <div key={index} className="" id={`${index}`}>
           {/* Content */}
           <div className="pb-6">
-            <h2 className="text-2xl font-bold mb-4 font-MorningBakery tracking-widest">
+            <h2 className="text-2xl font-bold mb-4 font-MorningBakery tracking-widest text-secondary">
               {program.title}
             </h2>
 

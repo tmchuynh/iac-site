@@ -8,7 +8,6 @@ import {
   DrawerClose,
   DrawerContent,
   DrawerDescription,
-  DrawerFooter,
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
@@ -18,7 +17,7 @@ import { Button } from "./ui/button";
 
 export const ShowcaseDetails: React.FC = () => {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 w-11/12 mx-auto">
       {showcase.map((subject, index) => (
         <div key={index} className="" id={`{index}`}>
           {/* Content */}
@@ -96,7 +95,6 @@ export const ShowcaseDetails: React.FC = () => {
                           ))}
                         </DrawerDescription>
                       </DrawerHeader>
-                      <DrawerFooter></DrawerFooter>
                     </DrawerContent>
                   </Drawer>
                 )}
@@ -115,6 +113,7 @@ export const ShowcaseNavigation: React.FC = () => {
     <div className="flex flex-wrap gap-4">
       {showcase.map((subject, index) => (
         <Button
+          key={index}
           variant={"outline"}
           size={"sm"}
           onClick={() => router.push(`/info/showcase#${index}`)}

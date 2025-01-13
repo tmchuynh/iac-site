@@ -9,7 +9,6 @@ import {
 } from "chart.js";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import { useTheme } from "next-themes";
-import { useSidebar } from "./ui/sidebar";
 
 ChartJS.register(ArcElement, Tooltip, Legend, ChartDataLabels);
 
@@ -22,6 +21,9 @@ const dataSource = [
 ];
 
 const getCSSVariable = (variable: string): string => {
+  if (typeof window === "undefined") {
+    return "";
+  }
   const rootStyle = window.getComputedStyle(document.documentElement);
   return rootStyle.getPropertyValue(variable).trim();
 };
@@ -30,7 +32,6 @@ const DoughnutChartLabel = () => {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [backgroundColors, setBackgroundColors] = useState<string[]>([]);
-  const { open } = useSidebar();
 
   useEffect(() => {
     setMounted(true);
@@ -110,11 +111,7 @@ const DoughnutChartLabel = () => {
   if (!mounted) return null;
 
   return (
-    <div
-      className={
-        open ? "mx-auto w-[400px] h-[400px]" : "mx-auto w-[500px] h-[500px]"
-      }
-    >
+    <div className="mx-auto w-[500px] h-[500px]">
       <Doughnut data={chartData} options={options} />
     </div>
   );

@@ -11,26 +11,18 @@ import {
   CardTitle,
 } from "./ui/card";
 import { programs } from "@/data/data";
-import { useSidebar } from "./ui/sidebar";
 import { LuArrowBigRightDash } from "react-icons/lu";
 
 export default function ProgramCards() {
   const router = useRouter();
-  const { open } = useSidebar();
 
   return (
-    <section
-      className={
-        open ? "mb-12 grid grid-cols-2 gap-3" : "mb-12 grid grid-cols-3 gap-3"
-      }
-    >
+    <section className="mb-12 grid grid-cols-3 gap-3 px-6 w-11/12 mx-auto">
       {programs.map((program, index) => (
         <Card
           key={index}
           className={
-            open
-              ? "grid grid-rows-2"
-              : index % 2 === 0
+            index % 2 === 0
               ? "grid grid-rows-2 bg-background"
               : "grid grid-rows-2"
           }
@@ -66,9 +58,7 @@ export default function ProgramCards() {
           </CardContent>
           <CardFooter>
             <Button
-              variant={
-                open ? "secondary" : index % 2 === 0 ? "outline" : "default"
-              }
+              variant={index % 2 === 0 ? "outline" : "default"}
               onClick={() => router.push(`/info/programs#${index}`)}
               className="w-full group"
             >
