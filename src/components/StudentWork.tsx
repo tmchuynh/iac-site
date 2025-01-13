@@ -14,6 +14,15 @@ import {
 } from "@/components/ui/drawer";
 import { LuArrowBigRightDash } from "react-icons/lu";
 import { Button } from "./ui/button";
+import { Sheet } from "lucide-react";
+import {
+  SheetTrigger,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetClose,
+  SheetDescription,
+} from "./ui/sheet";
 
 export const ShowcaseDetails: React.FC = () => {
   return (
@@ -64,28 +73,24 @@ export const ShowcaseDetails: React.FC = () => {
                 )}
 
                 {work.writing && (
-                  <Drawer>
-                    <DrawerTrigger className="group w-1/4 mx-6 mb-6">
+                  <Sheet>
+                    <SheetTrigger className="group w-1/4 mx-6 mb-6">
                       Read Entire Piece
                       <span className="inline-block transition-transform duration-300 ease-in-out group-hover:translate-x-4">
                         <LuArrowBigRightDash />
                       </span>
-                    </DrawerTrigger>
-                    <DrawerContent>
-                      <DrawerHeader>
+                    </SheetTrigger>
+                    <SheetContent>
+                      <SheetHeader>
                         <div className="flex justify-between">
-                          <DrawerTitle>{work.title}</DrawerTitle>
-                          <DrawerClose
-                            className="group w-1/12 absolute right-0 top-5 hover:border-none"
-                            variant="ghost"
-                            size="icon"
-                          >
+                          <SheetTitle>{work.title}</SheetTitle>
+                          <SheetClose className="group w-1/12 absolute right-0 top-5 hover:border-none">
                             <span className="inline-block transition-transform duration-300 ease-in-out group-hover:rotate-90">
                               <IoClose />
                             </span>
-                          </DrawerClose>
+                          </SheetClose>
                         </div>
-                        <DrawerDescription>
+                        <SheetDescription>
                           {work.writing.split("\n").map((line, index) => (
                             <React.Fragment key={index}>
                               &emsp;
@@ -93,10 +98,10 @@ export const ShowcaseDetails: React.FC = () => {
                               <br />
                             </React.Fragment>
                           ))}
-                        </DrawerDescription>
-                      </DrawerHeader>
-                    </DrawerContent>
-                  </Drawer>
+                        </SheetDescription>
+                      </SheetHeader>
+                    </SheetContent>
+                  </Sheet>
                 )}
               </Card>
             ))}

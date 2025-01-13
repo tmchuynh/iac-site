@@ -15,7 +15,7 @@ import { ChevronDownIcon } from "lucide-react";
 import { RiMenu3Fill } from "react-icons/ri";
 import { IoClose } from "react-icons/io5";
 import { Button } from "./button";
-import { programsMenu, aboutMenu } from "@/data/data";
+import { programsMenu } from "@/data/data";
 
 export default function MenuBar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

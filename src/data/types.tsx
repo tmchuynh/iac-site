@@ -33,6 +33,8 @@ export interface staffInfo {
     moreInfo?: {
       text: string;
       images: string[];
+      email?: string;
+      phone?: string;
     };
   }[];
 }

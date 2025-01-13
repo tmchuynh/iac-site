@@ -1,20 +1,22 @@
 "use client";
-
 import { FC } from "react";
-import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerDescription,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from "@/components/ui/drawer";
 import { staffCategories } from "@/data/data";
 import React from "react";
+import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
+import { Sheet } from "lucide-react";
+import {
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { IoClose } from "react-icons/io5";
 
 const StaffPage: FC = () => {
+  const router = useRouter();
   return (
     <main className="px-4 py-8 w-11/12 mx-auto">
       <section className="text-center mb-12">
@@ -71,52 +73,76 @@ const StaffPage: FC = () => {
                   </div>
 
                   {staff.moreInfo && (
-                    <Drawer>
-                      <DrawerTrigger
-                        className="w-full text-wrap h-fit"
-                        variant="secondary"
-                      >
+                    <Sheet>
+                      <SheetTrigger className="w-full text-wrap h-fit">
                         Learn More About {staff.name}
-                      </DrawerTrigger>
-                      <DrawerContent>
-                        <DrawerHeader>
-                          <DrawerTitle className="font-MorningBakery tracking-widest text-accent text-3xl">
-                            About {staff.name}
-                            <DrawerClose
-                              className="group w-1/12 absolute right-0 top-5 hover:border-none"
-                              variant="ghost"
-                              size="icon"
-                            >
+                      </SheetTrigger>
+                      <SheetContent>
+                        <SheetHeader>
+                          <SheetTitle className="flex justify-between w-11/12">
+                            <div>
+                              <p className="font-MorningBakery tracking-widest text-accent text-3xl">
+                                About {staff.name}
+                              </p>
+                              <br />
+                              <p>{staff.role}</p>
+                            </div>
+                            <div className="flex flex-col items-end">
+                              {staff.moreInfo.email && (
+                                <Button
+                                  variant={"link"}
+                                  onClick={() =>
+                                    router.push(
+                                      `mailto:${staff.moreInfo?.email}`
+                                    )
+                                  }
+                                  rel="noopener noreferrer"
+                                >
+                                  {staff.moreInfo.email}
+                                </Button>
+                              )}
+                              {staff.moreInfo.phone && (
+                                <Button
+                                  variant={"link"}
+                                  onClick={() =>
+                                    router.push(`tel:${staff.moreInfo?.phone}`)
+                                  }
+                                  rel="noopener noreferrer"
+                                >
+                                  {staff.moreInfo.phone}
+                                </Button>
+                              )}
+                            </div>
+                            <SheetClose className="group w-1/12 absolute right-0 top-5 hover:border-none">
                               <span className="inline-block transition-transform duration-300 ease-in-out group-hover:rotate-90">
                                 <IoClose />
                               </span>
-                            </DrawerClose>
-                          </DrawerTitle>
-                          <DrawerDescription>
-                            {staff.moreInfo.text
-                              .split("<br/>")
-                              .map((line, index) => (
-                                <React.Fragment key={index}>
-                                  &emsp;
-                                  {line}
-                                  <br />
-                                  <br />
-                                </React.Fragment>
-                              ))}
-                          </DrawerDescription>
-                        </DrawerHeader>
-                        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 px-4 mb-4">
+                            </SheetClose>
+                          </SheetTitle>
+                        </SheetHeader>
+                        <SheetDescription>
+                          {staff.moreInfo.text
+                            .split("<br/>")
+                            .map((line, index) => (
+                              <React.Fragment key={index}>
+                                &emsp;
+                                {line}
+                                <br />
+                                <br />
+                              </React.Fragment>
+                            ))}
+                        </SheetDescription>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 px-4 mb-4">
                           {staff.moreInfo.images.map((image, index) => (
                             <img
                               key={index}
                               src={image}
                               alt={`${staff.name} additional info ${index + 1}`}
-                              className="rounded-lg border border-input"
                             />
                           ))}
                         </div>
-                      </DrawerContent>
-                    </Drawer>
+                      </SheetContent>
+                    </Sheet>
                   )}
                 </div>
               </div>
