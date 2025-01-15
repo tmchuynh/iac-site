@@ -88,7 +88,7 @@ const SchoolsInfo: FC = () => {
             },
           ].map((item, index) => (
             <li key={index} className="grid grid-cols-12 text-balance">
-              <FaBook className="text-chart-3 text-xl col-span-1 mt-1 mx-auto" />
+              <FaBook className="text-accent-3 text-xl col-span-1 mt-1 mx-auto" />
               <div className="col-span-11">
                 <span className="font-semibold font-Cute_Rabbit tracking-widest">
                   {item.title}

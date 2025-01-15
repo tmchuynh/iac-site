@@ -10,16 +10,16 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-gradient-to-tl from-[#48226C] from-10% via-[#8200E7] via-60% to-[#BF3EFF] text-slate-200 shadow hover:from-[#5D83E9] hover:from-10% hover:via-[#1842B4] hover:via-70% hover:to-[#0C215A]",
+          "bg-primary text-primary-foreground hover:bg-secondary hover:text-secondary-foreground",
         secondary:
-          "bg-gradient-to-br from-[#5D83E9] from-15% via-[#1842B4] via-80% to-[#0C215A] text-slate-200 shadow hover:from-[#BF3EFF] hover:from-10%  hover:via-[#8200E7] hover:via-60% hover:to-[#48226C]",
+          "bg-secondary text-secondary-foreground hover:bg-tertiary hover:text-tertiary-foreground",
         destructive:
-          "bg-gradient-to-br from-[#5c0000] from-10% via-[#450505] via-60% to-[#260000] text-destructive-foreground shadow hover:from-[#d66565] hover:from-10%  hover:via-[#c22323] hover:via-60% hover:to-[#820000]",
+          "bg-destructive text-destructive-foreground border-2 border-transparent hover:border-destructive hover:bg-transparent",
         outline:
-          "border border-border bg-background hover:bg-gradient-to-tl hover:from-[#5D83E9] hover:from-15% hover:via-[#1842B4] hover:border-transparent hover:via-75% hover:to-[#0C215A] hover:text-slate-200",
+          "bg-transparent border text-foreground hover:bg-secondary hover:text-secondary-foreground hover:border-transparent",
         ghost: "hover:border hover:text-accent-foreground shadow-none",
         icon: "hover:text-accent-foreground shadow-none",
-        link: "text-primary underline-offset-4 hover:underline shadow-none",
+        link: "text-accent-1 underline-offset-4 hover:underline shadow-none tracking-wider",
       },
       size: {
         default: "h-9 px-4 py-2",

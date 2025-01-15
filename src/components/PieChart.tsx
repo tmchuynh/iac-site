@@ -93,7 +93,7 @@ const DoughnutChartLabel = () => {
         },
       },
       datalabels: {
-        color: "#000",
+        color: "#fff",
         font: {
           size: 14,
           weight: "bold",

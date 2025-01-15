@@ -33,12 +33,20 @@ export default {
 					DEFAULT: 'var(--secondary)',
 					foreground: 'var(--secondary-foreground)',
 				},
+				tertiary: {
+					DEFAULT: 'var(--tertiary)',
+					foreground: 'var(--tertiary-foreground)',
+				},
 				muted: {
 					DEFAULT: 'var(--muted)',
 					foreground: 'var(--muted-foreground)',
 				},
 				accent: {
-					DEFAULT: 'var(--accent)',
+					'1': 'var(--accent-1)',
+					'2': 'var(--accent-2)',
+					'3': 'var(--accent-3)',
+					'4': 'var(--accent-4)',
+					'5': 'var(--accent-5)',
 					foreground: 'var(--accent-foreground)',
 				},
 				destructive: {
@@ -54,6 +62,7 @@ export default {
 					'3': 'var(--chart-3)',
 					'4': 'var(--chart-4)',
 					'5': 'var(--chart-5)',
+					foreground: 'var(--accent-foreground)',
 				},
 				sidebar: {
 					DEFAULT: 'var(--sidebar-background)',
@@ -67,22 +76,11 @@ export default {
 				}
 			},
 			fontFamily: {
-				Atop: ['Atop', 'sans-serif'],
-				Bubble: ['Bubble-Love', 'serif'],
-				Chicle: ['Chicle-Regular', 'serif'],
-				Brainy_Kids: ['Brainy-Kids', 'serif'],
+				body: ['Dosis', 'serif'],
 				Cute_Rabbit: ['Cute_Rabbit', 'serif'],
-				Chocolate: ['Chocolate', 'serif'],
 				MorningBakery: ['MorningBakery', 'serif'],
-				Fungky: ['Fungky-Brow', 'serif'],
-				Halo: ['Halo-Dek', 'serif'],
-				LapsusPro: ['LapsusPro-Bold', 'serif'],
 				Luckiest: ['Luckiest', 'serif'],
 				Magic: ['Magic-Bubble', 'serif'],
-				Milkyway: ['Milkyway', 'serif'],
-				MouseMemoirs: ['MouseMemoirs-Regular', 'serif'],
-				Nabana: ['Nabana-ShadowBold', 'serif'],
-				Whoa: ['Whoa', 'serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

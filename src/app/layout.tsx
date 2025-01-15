@@ -1,14 +1,14 @@
 "use client";
-
-import { NavSidebar } from "@/components/NavSidebar";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import Head from "next/head";
 import React from "react";
-import { NotFoundProvider, useNotFound } from "./context/NotFoundContext";
+import { NotFoundProvider } from "./context/NotFoundContext";
 import "./globals.css";
 import { Providers } from "./providers";
 import MenuBar from "@/components/ui/menu";
 import Banner from "@/components/ui/banner";
+import BackToTop from "@/components/BackToTop";
+import SpeedDial from "@/components/SpeedDial";
+import { actions } from "@/data/data";
 
 export default function RootLayout({
   children,
@@ -40,6 +40,8 @@ export default function RootLayout({
             <MainContent>
               <MenuBar />
               {children}
+              <SpeedDial actions={actions} />
+              <BackToTop />
               <Banner />
             </MainContent>
           </Providers>

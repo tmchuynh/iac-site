@@ -4,7 +4,7 @@ import DoughnutChart from "@/components/PieChart";
 import { ProgramDetails } from "@/components/ProgramDetails";
 import { RequestForm } from "@/components/RequestForm";
 import { Button } from "@/components/ui/button";
-import { programs } from "@/data/data";
+import { features, programs } from "@/data/data";
 import { useRouter } from "next/navigation";
 import { FC } from "react";
 import {
@@ -25,25 +25,28 @@ const ProgramsPage: FC = () => {
         <h1 className="my-4 text-balance uppercase font-Luckiest tracking-wider lg:text-4xl text-lg text-secondary font-extrabold text-center">
           About Our Classes
         </h1>
-        <div className="flex gap-x-4 flex-wrap pb-5">
-          {programs.map((program, index) => (
-            <Button
-              key={index}
-              variant={"outline"}
-              size={"sm"}
-              onClick={() => router.push(`/info/showcase#${index}`)}
-              className="mt-2 group"
-            >
-              {program.icons.map((Icon, index) =>
-                index === 0 ? (
-                  <span key={index} className="inline-block w-4 h-4 mr-2">
-                    <Icon />
-                  </span>
-                ) : null
-              )}
-              <div className="mt-1">{program.title}</div>
-            </Button>
-          ))}
+        <div className="flex flex-col md:flex-row pb-5 items-center">
+          <p className="md:w-32 md:pr-4">Quick Links</p>
+          <div className="flex gap-x-4 flex-wrap justify-center md:justify-start">
+            {programs.map((program, index) => (
+              <Button
+                key={index}
+                variant={"outline"}
+                size={"sm"}
+                onClick={() => router.push(`/info/showcase#${index}`)}
+                className="mt-2 group"
+              >
+                {program.icons.map((Icon, index) =>
+                  index === 0 ? (
+                    <span key={index} className="inline-block w-4 h-4 mr-2">
+                      <Icon />
+                    </span>
+                  ) : null
+                )}
+                <div>{program.title}</div>
+              </Button>
+            ))}
+          </div>
         </div>
         <p className="text-md leading-relaxed">
           In order to provide an organized and effective learning experience,
@@ -89,7 +92,7 @@ const ProgramsPage: FC = () => {
             },
           ].map((item, index) => (
             <li key={index} className="grid grid-cols-12 text-balance">
-              <FaCheck className="text-chart-3 text-xl col-span-1 mt-1 mx-auto" />
+              <FaCheck className="text-accent-3 text-xl col-span-1 mt-1 mx-auto" />
               <div className="col-span-11">
                 <span className="font-semibold font-Cute_Rabbit tracking-widest">
                   {item.title}
@@ -121,30 +124,19 @@ const ProgramsPage: FC = () => {
 
       <section className="mb-12 mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 py-2 uppercase gap-2 text-lg lg:text-sm">
-          <div className="flex flex-col items-center text-center gap-3">
-            <div className="bg-chart-1 w-fit p-2 rounded-md mx-auto">
-              <FaMedal className="w-8 h-8" />
+          {features.map((feature, index) => (
+            <div
+              key={index}
+              className="flex flex-col items-center text-center gap-3"
+            >
+              <div
+                className={`${feature.bgClass} w-fit p-2 rounded-md mx-auto text-chart-foreground`}
+              >
+                {feature.icon}
+              </div>
+              <p>{feature.text}</p>
             </div>
-            <p>Trusted by leading schools and parents</p>
-          </div>
-          <div className="flex flex-col items-center text-center gap-3">
-            <div className="bg-chart-2 w-fit p-2 rounded-md mx-auto">
-              <FaGraduationCap className="w-8 h-8" />
-            </div>
-            <p>Experienced & Dedicated Professional Instructors</p>
-          </div>
-          <div className="flex flex-col items-center text-center gap-3">
-            <div className="bg-chart-3 w-fit p-2 rounded-md mx-auto">
-              <FaChartPie className="w-8 h-8" />
-            </div>
-            <p>Well diversed classes in various disciplines</p>
-          </div>
-          <div className="flex flex-col items-center text-center gap-3">
-            <div className="bg-chart-3 w-fit p-2 rounded-md mx-auto">
-              <FaBrain className="w-8 h-8" />
-            </div>
-            <p>Inspires growth and collaboration</p>
-          </div>
+          ))}
         </div>
       </section>
 

@@ -14,7 +14,7 @@ const CommitmentPage: FC = () => {
       </h1>
       <p className="text-md leading-relaxed">
         At{" "}
-        <span className="font-semibold text-primary">
+        <span className="font-semibold text-primary dark:text-accent-3">
           International Activities Club
         </span>
         , we believe every student deserves the opportunity to learn, grow, and
@@ -58,7 +58,7 @@ const CommitmentPage: FC = () => {
           "Continuous effort to eliminate barriers to inclusion.",
         ].map((item, index) => (
           <li key={index} className="flex items-center space-x-2">
-            <FaCheckDouble className="text-xl text-chart-2" />
+            <FaCheckDouble className="text-xl text-accent-2" />
             <span>{item}</span>
           </li>
         ))}

@@ -39,11 +39,11 @@ export default function ProgramCards() {
                   className={
                     idx % 2 === 0
                       ? idx % 5 === 0
-                        ? "text-xl text-chart-5"
-                        : "text-xl text-chart-1"
+                        ? "text-xl text-accent-5"
+                        : "text-xl text-accent-1"
                       : idx % 3 === 0
-                      ? "text-xl text-chart-3"
-                      : "text-xl text-chart-2"
+                      ? "text-xl text-accent-3"
+                      : "text-xl text-accent-2"
                   }
                 />
               ))}

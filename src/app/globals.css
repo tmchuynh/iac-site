@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-}
-
 @layer base {
   :root {
     --background: #ffffff;
@@ -14,24 +10,31 @@ body {
     --card-foreground: #0e0e0e;
     --popover: #eeeeee;
     --popover-foreground: #080707;
-    --primary: #7e22ce;
+    --primary: #30097d;
     --primary-foreground: #f5f5f5;
-    --secondary: #1d4ed8;
+    --secondary: #3452b4;
     --secondary-foreground: #f5f5f5;
+    --tertiary: #20b805;
+    --tertiary-foreground: #f5f5f5;
     --muted: #8c91a4;
     --muted-foreground: #080707;
-    --accent: #155e75;
-    --accent-foreground: #080707;
+    --accent-1: #38bdf8;
+    --accent-2: #4ade80;
+    --accent-3: #818cf8;
+    --accent-4: #e879f9;
+    --accent-5: #60a5fa;
+    --accent-foreground: #f5f5f5;
     --destructive: #cc3e58;
     --destructive-foreground: #f5f5f5;
     --border: #581c87;
     --input: #e5e5e5;
     --ring: #d8b4fe;
-    --chart-1: #38bdf8;
-    --chart-2: #4ade80;
-    --chart-3: #818cf8;
-    --chart-4: #e879f9;
-    --chart-5: #60a5fa;
+    --chart-1: #cca1e4;
+    --chart-2: #aa68cd;
+    --chart-3: #8734b4;
+    --chart-4: #5e0889;
+    --chart-5: #22004a;
+    --chart-foreground: #155e75;
     --radius: 0.75rem;
     --sidebar-background: #fafafa;
     --sidebar-foreground: #080707;
@@ -43,30 +46,37 @@ body {
     --sidebar-ring: #85c4ec;
   }
   .dark {
-    --background: #1e1e1e;
+    --background: #010003;
     --foreground: #eaeaea;
     --card: #252525;
     --card-foreground: #eaeaea;
-    --popover: #1a141e;
+    --popover: #101010;
     --popover-foreground: #eaeaea;
-    --primary: #a78bfa;
-    --primary-foreground: #1c1b1b;
-    --secondary: #60a5fa;
-    --secondary-foreground: #1c1b1b;
-    --muted: #3a3a3a;
+    --primary: #580aab;
+    --primary-foreground: #eaeaea;
+    --secondary: #9189fc;
+    --secondary-foreground: #010003;
+    --tertiary: #57e93d;
+    --tertiary-foreground: #010003;
+    --muted: #f9eeee;
     --muted-foreground: #f5f5f5;
-    --accent: #0d9488;
-    --accent-foreground: #a7f3d0;
+    --accent-1: #bbf7d0;
+    --accent-2: #f5d0fe;
+    --accent-3: #fef08a;
+    --accent-4: #bae6fd;
+    --accent-5: #6ea1ff;
+    --accent-foreground: #010003;
     --destructive: #cf6679;
     --destructive-foreground: #ffffff;
     --border: #e9d5ff;
     --input: #424242;
     --ring: #d8b4fe;
-    --chart-1: #bbf7d0;
-    --chart-2: #f5d0fe;
-    --chart-3: #fef08a;
-    --chart-4: #bae6fd;
-    --chart-5: #99f6e4;
+    --chart-1: #c588e6;
+    --chart-2: #a154cb;
+    --chart-3: #8a28c0;
+    --chart-4: #6b089c;
+    --chart-5: #22004a;
+    --chart-foreground: #155e75;
     --sidebar-background: #121212;
     --sidebar-foreground: #eaeaea;
     --sidebar-primary: #a78bfa;
@@ -77,59 +87,9 @@ body {
     --sidebar-ring: #60a5fa;
   }
 }
-
-@font-face {
-  font-family: "Atop";
-  src: url("/fonts/Atop.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Bubble-Love";
-  src: url("/fonts/Bubble-Love.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Brainy-Kids";
-  src: url("/fonts/Brainy-Kids.otf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-}
-
 @font-face {
   font-family: "Cute_Rabbit";
   src: url("/fonts/Cute_Rabbit.otf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Chocolate";
-  src: url("/fonts/Chocolate.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Chicle-Regular";
-  src: url("/fonts/Chicle-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Fungky-Brow";
-  src: url("/fonts/Fungky-Brow.otf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Halo-Dek";
-  src: url("/fonts/Halo-Dek.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
@@ -142,9 +102,9 @@ body {
 }
 
 @font-face {
-  font-family: "LapsusPro-Bold";
-  src: url("/fonts/LapsusPro-Bold.otf") format("opentype");
-  font-weight: 700;
+  font-family: "Dosis";
+  src: url("/fonts/Dosis.ttf") format("truetype");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -162,40 +122,12 @@ body {
   font-style: normal;
 }
 
-@font-face {
-  font-family: "Milkyway";
-  src: url("/fonts/Milkyway.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "MouseMemoirs-Regular";
-  src: url("/fonts/MouseMemoirs-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Nabana-ShadowBold";
-  src: url("/fonts/Nabana-ShadowBold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Whoa";
-  src: url("/fonts/Whoa.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-}
-
 @layer base {
   * {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body;
   }
   p {
     @apply mb-2 text-pretty;

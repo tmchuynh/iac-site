@@ -16,6 +16,7 @@ import { RiMenu3Fill } from "react-icons/ri";
 import { IoClose } from "react-icons/io5";
 import { Button } from "./button";
 import { programsMenu } from "@/data/data";
+import { ModeToggle } from "../ModeToggle";
 
 export default function MenuBar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -24,7 +25,7 @@ export default function MenuBar() {
     <header>
       <nav
         aria-label="Global"
-        className="mx-auto flex max-w-7xl items-center justify-between p-6 m-0 lg:px-8 bg-primary text-primary-foreground"
+        className="mx-auto flex items-center justify-between p-6 m-0 bg-primary text-primary-foreground font-Luckiest tracking-widest text-lg"
       >
         <div className="flex lg:flex-1">
           <a href="/" className="-m-1.5">
@@ -32,7 +33,7 @@ export default function MenuBar() {
             <img
               alt="IAC Logo"
               src="/images/whiteLogo.png"
-              className="h-12 w-auto"
+              className="h-14 -my-5 w-auto"
             />
           </a>
         </div>
@@ -47,19 +48,19 @@ export default function MenuBar() {
             <RiMenu3Fill aria-hidden="true" className="size-6" />
           </Button>
         </div>
-        <PopoverGroup className="hidden lg:flex lg:gap-x-12">
-          <a href="/" className="text-sm/6 font-semibold">
+        <PopoverGroup className="hidden lg:flex lg:gap-x-12 lg:mt-1">
+          <a href="/" className="font-semibold">
             Home
           </a>
-          <a href="/register" className="text-sm/6 font-semibold">
+          <a href="/register" className="font-semibold">
             Register
           </a>
           <Popover className="relative">
-            <PopoverButton className="flex items-center gap-x-1 text-sm/6 font-semibold">
+            <PopoverButton className="flex items-center gap-x-1 font-semibold">
               Our Programs
               <ChevronDownIcon
                 aria-hidden="true"
-                className="size-5 flex-none text-gray-400"
+                className="size-5 flex-none -mt-2"
               />
             </PopoverButton>
 
@@ -68,30 +69,35 @@ export default function MenuBar() {
               className="absolute -right-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-popover text-popover-foreground shadow-lg ring-1 ring-gray-900/5 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
             >
               <div className="p-4">
-                {programsMenu.map((item) => (
-                  <div
-                    key={item.name}
-                    className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-card hover:text-card-foreground"
-                  >
-                    <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-secondary text-secondary-foreground group-hover:bg-primary group-hover:text-primary-foreground">
-                      <item.icon aria-hidden="true" className="size-6" />
+                {programsMenu.map((item, index) => (
+                  <div key={index}>
+                    <div
+                      key={item.name}
+                      className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-card hover:text-card-foreground"
+                    >
+                      <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-secondary text-secondary-foreground group-hover:bg-primary group-hover:text-primary-foreground">
+                        <item.icon aria-hidden="true" className="size-6" />
+                      </div>
+                      <div className="flex-auto">
+                        <a href={item.href} className="block font-semibold">
+                          {item.name}
+                          <span className="absolute inset-0" />
+                        </a>
+                        <p className="font-body">{item.description}</p>
+                      </div>
                     </div>
-                    <div className="flex-auto">
-                      <a href={item.href} className="block font-semibold">
-                        {item.name}
-                        <span className="absolute inset-0" />
-                      </a>
-                      <p className="mt-1">{item.description}</p>
-                    </div>
+                    {index < programsMenu.length - 1 && (
+                      <hr className="my-1.5" />
+                    )}
                   </div>
                 ))}
               </div>
             </PopoverPanel>
           </Popover>
-          <a href="/staff" className="text-sm/6 font-semibold">
+          <a href="/staff" className="font-semibold">
             The Staff
           </a>
-          <a href="/contact" className="text-sm/6 font-semibold">
+          <a href="/contact" className="font-semibold">
             Contact
           </a>
         </PopoverGroup>
@@ -102,7 +108,7 @@ export default function MenuBar() {
         className="lg:hidden"
       >
         <div className="fixed inset-0 z-10" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-background text-foreground px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <a href="#" className="-my-8 -mx-12">
               <span className="sr-only">Your Company</span>
@@ -129,18 +135,18 @@ export default function MenuBar() {
               <div className="space-y-2 py-6">
                 <a
                   href="/"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold hover:bg-primary hover:text-primary-foreground"
                 >
                   Home
                 </a>
                 <a
                   href="/register"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold hover:bg-primary hover:text-primary-foreground"
                 >
                   Register
                 </a>
                 <Disclosure as="div" className="-mx-3">
-                  <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base/7 font-semibold hover:bg-gray-50">
+                  <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base/7 font-semibold hover:bg-primary hover:text-primary-foreground">
                     Our Programs
                     <ChevronDownIcon
                       aria-hidden="true"
@@ -153,7 +159,7 @@ export default function MenuBar() {
                         key={item.name}
                         as="a"
                         href={item.href}
-                        className="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold hover:bg-gray-50"
+                        className="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold hover:bg-primary hover:text-primary-foreground"
                       >
                         {item.name}
                       </DisclosureButton>
@@ -162,18 +168,22 @@ export default function MenuBar() {
                 </Disclosure>
                 <a
                   href="/staff"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold hover:bg-primary hover:text-primary-foreground"
                 >
                   The Staff
                 </a>
                 <a
                   href="/contact"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold hover:bg-primary hover:text-primary-foreground"
                 >
                   Contact
                 </a>
               </div>
             </div>
+          </div>
+          <div className="absolute bottom-5">
+            <p className="sr-only">Theme Toggle</p>
+            <ModeToggle />
           </div>
         </DialogPanel>
       </Dialog>
