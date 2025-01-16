@@ -1,5 +1,5 @@
 import { ChartPieIcon, House, Info, Send } from "lucide-react";
-import { PiDiscoBall } from "react-icons/pi";
+import { PiDiscoBall, PiSoccerBallFill } from "react-icons/pi";
 import {
   FaChess,
   FaBasketballBall,
@@ -30,12 +30,7 @@ import {
   GiWhistle,
 } from "react-icons/gi";
 import { TfiWrite } from "react-icons/tfi";
-import {
-  MdOutlineBrush,
-  MdOutlineFormatQuote,
-  MdOutlineSportsSoccer,
-  MdTimer,
-} from "react-icons/md";
+import { MdOutlineBrush, MdOutlineFormatQuote, MdTimer } from "react-icons/md";
 import {
   programInfo,
   showcaseInfo,
@@ -268,7 +263,7 @@ export const programs: programInfo[] = [
   },
   {
     title: "Soccer",
-    icons: [MdOutlineSportsSoccer, GiWhistle],
+    icons: [PiSoccerBallFill, GiWhistle],
     image: "/images/Class_Photos/Soccer/soccer-9.jpg",
     description:
       "Step onto the field and elevate your game, sharpening your skills while embracing the spirit of teamwork and strategic play.",
@@ -550,7 +545,7 @@ export const staffCategories: staffInfo[] = [
         role: "Chief Operating Officer",
         bio: "Oversees operations, engineering, and administration seamlessly.",
         image: "/images/Staff_Photos/Tina.jpg",
-        icons: [FaChess, FaPencil, FaLaptopCode],
+        icons: [FaLaptopCode, FaPencil, FaChess],
         moreInfo: {
           email: "tina@iacafterschools.com",
           phone: "(714) 858-2418",
@@ -573,7 +568,7 @@ export const staffCategories: staffInfo[] = [
         role: "Director of Chess Operations",
         bio: "Leads chess operations with expertise and passion, inspiring growth and strategy.",
         image: "/images/Staff_Photos/Mike.jpg",
-        icons: [MdOutlineSportsSoccer, FaChess],
+        icons: [PiSoccerBallFill, FaChess],
         moreInfo: {
           text: "Mike’s partnership with Justin, spanning over two decades, reflects an unshakeable bond built on trust, respect, and shared dedication. Through these years, Mike has been the cornerstone of their journey, embodying extraordinary loyalty, perseverance, and passion. His path from a devoted team member to an indispensable leader within the company is marked by tireless effort, steadfast determination, and an unwavering love for teaching chess. Mike’s role transcends his unmatched expertise as the most experienced and skilled instructor; he is the driving force behind our educational mission. Every class he leads radiates his joy for teaching, demonstrating that for Mike, teaching is not just a profession but a true calling. His passion to inspire and support his students’ growth shines through in every lesson, making him invaluable to our organization.<br/>Mike’s impact extends far beyond his profound understanding of chess. He teaches more than the strategies of the game; he instills resilience, strategic thinking, and sportsmanship, equipping students with life skills that resonate beyond the classroom. His instruction is enriched by deep empathy and an innate ability to connect with learners, fostering a supportive environment where they can thrive. This combination of compassion and expertise has made Mike an unparalleled mentor, not just to students but to new instructors who look to him for guidance. He leads by example, embodying the core values of our organization and ensuring that every instructor aligns with our high standards. Mike’s mentorship helps integrate new team members seamlessly, building their confidence and enhancing their teaching approach.<br/>In everything he does, Mike sets the standard for dedication. He doesn’t just fulfill expectations; he consistently surpasses them, establishing a benchmark of excellence that others strive to meet. His reliability is the foundation on which our programs are built, offering certainty and trust in every class he leads. Mike’s commitment and work ethic have earned him the reputation of being the most dependable instructor on our team, a testament to his unwavering integrity and relentless pursuit of quality.<br/>Mike’s influence is deeply felt throughout the company. His leadership extends beyond teaching, serving as a source of motivation and encouragement for all who have the privilege of working with him. He exemplifies what it means to be passionate, driven, and committed to one’s craft. His presence reassures both new and seasoned instructors, enabling them to deliver exceptional experiences to students with confidence, knowing they have an irreplaceable mentor to support them.<br/>Mike’s dedication, mentorship, and passion make him an extraordinary asset whose contributions are beyond measure. His influence will continue to shape the future of IAC, ensuring that the legacy of excellence, compassion, and inspiration he embodies lives on in every corner of our organization.<br/>",
           images: [
@@ -615,7 +610,7 @@ export const staffCategories: staffInfo[] = [
         role: "Director of Performing Arts Operations",
         bio: "Manages performing arts operations with dedication and vision.",
         image: "/images/Staff_Photos/Layla.jpg",
-        icons: [FaTheaterMasks, FaLaptopCode],
+        icons: [FaTheaterMasks],
         moreInfo: {
           text: "Layla’s role as the Director of Performing Arts Operations at IAC is much more than a job title—it is a testament to her profound impact on the organization. This esteemed position reflects her pivotal contributions that have broadened the scope of IAC, ushering it into the dynamic world of performing arts and drama. Through her visionary leadership, Layla has created new pathways for students to explore their artistic abilities and express themselves creatively. Her influence has opened doors to a realm where students can engage with their passions, fostering a love for the arts that extends beyond the classroom.<br/>One of Layla’s most notable achievements lies in her dedication to mentoring and training new instructors, particularly those specializing in performing arts education. Layla embodies more than just an instructor; she is a mentor who meticulously imparts the values, standards, and high expectations that are the hallmark of IAC’s commitment to educational excellence. Under her expert guidance, new hires receive thorough training that equips them not just to meet but to exceed the company’s standards. Layla’s tireless dedication to nurturing new talent underscores her passion for cultivating future educators and performers who carry forward the principles of creativity and excellence.<br/>Layla’s influence reaches far beyond her own classes, touching every aspect of IAC’s performing arts programs. Her dedication to continuously refining and enhancing these programs ensures that students receive the highest quality education and opportunities. Her passion radiates throughout the institution, enriching students' experiences and nurturing a vibrant, artistic community.Known for her compassionate and inclusive approach, Layla is committed to ensuring that every student feels valued and seen.Her dedication to inclusivity knows no limits—she makes it her mission to accommodate the diverse needs of students, whether they are naturally extroverted or prefer to express themselves more quietly.<br/> In Layla’s classes, education is never a one- size - fits - all approach.She celebrates diversity and emphasizes the unique qualities and strengths of each student.Layla’s belief in the potential of every individual fuels her efforts to create a space where these unique traits can shine.Her dedication comes to life most vividly during the end- of - session showcase.This event is more than a performance; it is a heartfelt celebration of each student’s journey under Layla’s nurturing and attentive guidance.The showcase is designed to spotlight not just a few standout performers but to celebrate every student, acknowledging their growth, talents, and individuality.<br/> In Layla’s classroom, artistic growth is intertwined with the development of confidence and self- esteem.Her philosophy, rooted in the recognition and celebration of individuality, distinguishes her as an extraordinary and compassionate educator.Layla’s students leave her classes not only with enhanced artistic skills but with a newfound sense of self - worth and belief in their abilities.Her approach leaves an indelible mark on the hearts and minds of her students, making her a true beacon of inspiration and an invaluable leader within IAC.",
           images: [
@@ -664,12 +659,7 @@ export const staffCategories: staffInfo[] = [
         role: "Director of Honors and Presentations",
         bio: "Drives employee recognition through impactful presentations.",
         image: "/images/Staff_Photos/Kim.jpg",
-        icons: [
-          FaBasketballBall,
-          MdOutlineSportsSoccer,
-          FaVolleyballBall,
-          FaChess,
-        ],
+        icons: [FaBasketballBall, PiSoccerBallFill, FaVolleyballBall, FaChess],
         moreInfo: {
           text: "Kim’s role as the Director of Honors and Presentations at IAC is the embodiment of dedication, compassion, and vision. Her work has cultivated a culture where recognition is woven into the fabric of the institution, ensuring that every instructor and student feels seen, valued, and celebrated. With each initiative she leads, Kim brings warmth and sincerity, enhancing the sense of belonging and pride within the IAC community.<br/>What sets Kim apart is her exceptional ability to tailor recognition to each individual. She knows that every instructor and student has their own unique journey, and she takes great care to acknowledge their accomplishments in ways that resonate deeply. From organizing surprise events to honor educators to crafting customized tokens that mark students’ milestones, Kim’s attention to detail and empathy shine through. She believes wholeheartedly that recognizing someone’s efforts can inspire confidence, foster motivation, and remind them of their worth—and she dedicates herself to making this belief a reality.<br/>One of the most impactful parts of Kim’s work is her creation of personalized awards and keepsakes for students. These items are more than just physical tokens; they represent achievement, growth, and pride. Kim understands the power that such thoughtful gestures can have—how a well-crafted certificate or a custom memento can encourage students to push further and celebrate their progress. These tokens carry a message: that their journey matters, and their efforts are noticed.<br/>Kim’s dedication extends far beyond the creation of awards; it is evident in the meaningful events she organizes to highlight student success. Under her leadership, these gatherings are more than ceremonies; they are immersive, heartfelt celebrations that honor both individual stories and collective achievements. Each presentation reflects her commitment to making sure every student’s contributions are acknowledged with genuine respect. These events become cherished memories that students and families carry long after their time at IAC.<br/>Beyond her professional expertise, Kim is known for her compassion and inclusivity. She has built an environment where recognition is not just an occasional gesture but a daily practice that elevates morale and strengthens community bonds. Her efforts to acknowledge the dedication and excellence of instructors inspire them to continue giving their best, creating a ripple effect that enhances the entire educational experience. Kim’s open and caring approach ensures that IAC remains a place where everyone feels encouraged to excel.<br/>Her influence permeates every interaction, from large-scale events to the smallest gestures. Kim’s philosophy of recognition goes beyond celebrating achievements—it’s about affirming each person’s value and honoring the unique path they’ve taken. Through her tireless dedication, Kim has become a cornerstone of the IAC community, fostering a legacy of appreciation that will last for years to come.Kim has redefined what it means to celebrate excellence at IAC. Her work, whether through grand ceremonies or thoughtful personal touches, has left an enduring impact on students, instructors, and the entire organization. Her leadership, compassion, and unwavering commitment make her an invaluable part of the institution and a true inspiration to all who have the privilege of knowing her.",
           images: [
@@ -690,7 +680,7 @@ export const staffCategories: staffInfo[] = [
         name: "Brian Kile",
         role: "Basketball Instructor",
         image: "/images/Staff_Photos/Brian.jpg",
-        icons: [FaBasketballBall, MdOutlineSportsSoccer, FaFootballBall],
+        icons: [FaBasketballBall, PiSoccerBallFill, FaFootballBall],
       },
       {
         name: "Bailey Johnson",
@@ -726,7 +716,7 @@ export const staffCategories: staffInfo[] = [
         name: "Gino DeFalco",
         role: "Soccer Instructor",
         image: "/images/Staff_Photos/Gino.jpg",
-        icons: [MdOutlineSportsSoccer, FaVolleyballBall],
+        icons: [PiSoccerBallFill, FaVolleyballBall],
       },
       {
         name: "Jackie Rodriguez",
@@ -803,12 +793,7 @@ export const staffCategories: staffInfo[] = [
         name: "Keshawn Carter",
         role: "Basketball Instructor",
         image: "/images/Staff_Photos/Keshawn.jpg",
-        icons: [
-          FaBasketballBall,
-          MdOutlineSportsSoccer,
-          FaVolleyballBall,
-          FaChess,
-        ],
+        icons: [FaBasketballBall, PiSoccerBallFill, FaChess, FaVolleyballBall],
       },
       {
         name: "Lawrence Brown",
@@ -856,13 +841,7 @@ export const staffCategories: staffInfo[] = [
         name: "Jack Clark",
         role: "Public Speaking Instructor",
         image: "/images/Staff_Photos/Jack_Clark.jpg",
-        icons: [
-          FaPencil,
-          GiMicrophone,
-          FaBasketballBall,
-          FaTheaterMasks,
-          FaChess,
-        ],
+        icons: [GiMicrophone, FaPencil, FaChess, FaTheaterMasks],
       },
     ],
   },
@@ -879,7 +858,7 @@ export const staffCategories: staffInfo[] = [
         name: "Jessalyn Nguyen",
         role: "Administration Assistant",
         image: "/images/Staff_Photos/Jessalyn.jpg",
-        icons: [FaBasketballBall, MdOutlineSportsSoccer, FaVolleyballBall],
+        icons: [FaBasketballBall, PiSoccerBallFill, FaVolleyballBall],
       },
       {
         name: "Middka Vicencio",

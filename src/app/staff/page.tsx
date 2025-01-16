@@ -14,9 +14,23 @@ import {
   DialogClose,
 } from "@radix-ui/react-dialog";
 import { Badge } from "@/components/ui/badge";
+import { PiSoccerBallFill } from "react-icons/pi";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const StaffPage: FC = () => {
   const router = useRouter();
+  const accentColors = [
+    "text-accent-1",
+    "text-accent-2",
+    "text-accent-3",
+    "text-accent-4",
+    "text-accent-5",
+  ];
   return (
     <main className="px-4 py-8 w-11/12 mx-auto relative">
       <section className="text-center mb-12">
@@ -60,21 +74,45 @@ const StaffPage: FC = () => {
                       {staff.name}
                     </h3>
                     {staff.icons.length > 0 && (
-                      <div className="flex flex-wrap space-x-4 justify-center mb-4">
-                        {staff.icons.map((Icon, idx) => (
-                          <Icon
-                            key={idx}
-                            className={
-                              idx % 2 === 0
-                                ? idx % 5 === 0
-                                  ? "text-xl text-accent-5"
-                                  : "text-xl text-accent-1"
-                                : idx % 3 === 0
-                                ? "text-xl text-accent-3"
-                                : "text-xl text-accent-2"
-                            }
-                          />
-                        ))}
+                      <div className="flex flex-wrap space-x-4 justify-center items-center mb-4">
+                        {staff.icons.map((Icon) => {
+                          // Generate a deterministic color based on the Icon's name
+                          const colorIndex =
+                            [...Icon.name].reduce(
+                              (sum, char) =>
+                                Math.abs(sum - 260 + char.charCodeAt(0)),
+                              0
+                            ) % accentColors.length;
+                          const assignedColor = accentColors[colorIndex];
+                          const iconName = Icon.name.split(/(?=[A-Z])/);
+
+                          return (
+                            <TooltipProvider>
+                              <Tooltip>
+                                <TooltipTrigger>
+                                  <Icon
+                                    key={Icon.name}
+                                    className={
+                                      Icon.name === "PiSoccerBallFill" ||
+                                      Icon.name === "GiMicrophone"
+                                        ? `size-6 ${assignedColor}`
+                                        : `size-5 ${assignedColor}`
+                                    }
+                                  />
+                                </TooltipTrigger>
+                                <TooltipContent>
+                                  {iconName[1] === "Pencil"
+                                    ? "Creative Writing"
+                                    : iconName[1] === "Microphone"
+                                    ? "Public Speaking"
+                                    : iconName[1] === "Laptop"
+                                    ? "Coding"
+                                    : iconName[1]}
+                                </TooltipContent>
+                              </Tooltip>
+                            </TooltipProvider>
+                          );
+                        })}
                       </div>
                     )}
 
