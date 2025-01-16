@@ -32,7 +32,7 @@ const SpeedDial: React.FC<SpeedDialProps> = ({ actions }) => {
 
   return (
     <div
-      className="fixed end-6 bottom-6 group flex items-center mb-2 space-x-2"
+      className="fixed end-6 z-20 bottom-6 group flex items-center mb-2 space-x-2"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >

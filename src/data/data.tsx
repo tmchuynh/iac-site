@@ -819,7 +819,7 @@ export const staffCategories: staffInfo[] = [
       {
         name: "Novaleigh Bui",
         role: "Chess Instructor",
-        image: "/images/Staff_Photos/staff_photo_default.png",
+        image: "/images/Staff_Photos/Novaleigh_Bui.jpg",
         icons: [FaChess],
       },
       {
@@ -839,6 +839,30 @@ export const staffCategories: staffInfo[] = [
         role: "Chess Instructor",
         image: "/images/Staff_Photos/Zayaan.jpg",
         icons: [FaChess],
+      },
+      {
+        name: "Bob Barone",
+        role: "Basketball Instructor",
+        image: "/images/Staff_Photos/staff_photo_default.png",
+        icons: [FaBasketballBall],
+      },
+      {
+        name: "Juan Carlos Mendoza",
+        role: "Basketball Instructor",
+        image: "/images/Staff_Photos/Juan.jpg",
+        icons: [FaBasketballBall],
+      },
+      {
+        name: "Jack Clark",
+        role: "Public Speaking Instructor",
+        image: "/images/Staff_Photos/Jack_Clark.jpg",
+        icons: [
+          FaPencil,
+          GiMicrophone,
+          FaBasketballBall,
+          FaTheaterMasks,
+          FaChess,
+        ],
       },
     ],
   },

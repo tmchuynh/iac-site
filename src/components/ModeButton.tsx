@@ -44,6 +44,7 @@ const ModeButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
         onClick={handleThemeToggle}
         aria-label="Toggle theme"
         className={className}
+        ref={ref}
       >
         {theme === "dark" ? (
           <Sun
