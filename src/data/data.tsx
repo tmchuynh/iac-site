@@ -914,39 +914,39 @@ export const stats = [
 export const logos = [
   {
     alt: "Transistor",
-    src: "/images/School_Icons/arroyo.jpg",
+    src: "/images/School_Icons/arroyo.png",
   },
   {
     alt: "Reform",
-    src: "/images/School_Icons/fairmont.jpg",
+    src: "/images/School_Icons/fairmont.png",
   },
   {
     alt: "Tuple",
-    src: "/images/School_Icons/hicks.jpg",
+    src: "/images/School_Icons/hicks.png",
   },
   {
     alt: "SavvyCal",
-    src: "/images/School_Icons/ladera.jpg",
+    src: "/images/School_Icons/ladera.png",
   },
   {
     alt: "Statamic",
-    src: "/images/School_Icons/myford.jpg",
+    src: "/images/School_Icons/myford.png",
   },
   {
     alt: "Statamic",
-    src: "/images/School_Icons/orchardhills.jpg",
+    src: "/images/School_Icons/orchardhills.png",
   },
   {
     alt: "Statamic",
-    src: "/images/School_Icons/peterscanyon.jpg",
+    src: "/images/School_Icons/peterscanyon.png",
   },
   {
     alt: "Statamic",
-    src: "/images/School_Icons/redhill.jpg",
+    src: "/images/School_Icons/redhill.png",
   },
   {
     alt: "Statamic",
-    src: "/images/School_Icons/tustinranch.jpg",
+    src: "/images/School_Icons/tustinranch.png",
   },
 ];
 
@@ -987,7 +987,7 @@ export const testimonials: testimonialsInfo[] = [
     title: "Chess Parent",
     school: "Hicks Canyon Elementary School",
     class: "Chess",
-    image: "/images/School_Icons/hicks.jpg",
+    image: "/images/School_Icons/hicks.png",
     text: "...my sons attend Hicks Canyon Elementary and have been in several after-school programs provided by IAC. They always have a great time, and [instructors] always go the extra mile to help my son, Taylor, so he can get the most out of the program. Also, when I was having a financially difficult time last year, [Justin] gave us a big discount, telling me that it was their passion to help out the community. I'm happy to say that I no longer need the financial assistance for the program, but it was so meaningful to feel that someone in the community cared about my kids' well-being and opportunities to experience wholesome activities.",
   },
   {
@@ -995,7 +995,7 @@ export const testimonials: testimonialsInfo[] = [
     title: "Chess Parent",
     school: "Peters Canyon Elementary School",
     class: "Chess",
-    image: "/images/School_Icons/peterscanyon.jpg",
+    image: "/images/School_Icons/peterscanyon.png",
     text: "Due to one of my children's severe food allergies, we have been denied by multiple camps and classes who did not want the risk of having them as a student. However, Justin was very responsive and collaborated with me on ways to adapt the class to be a safe space. Both of my kids love learning about chess and practicing among their peers. I'm excited they are able to learn a game that teaches critical thinking and persistence.",
   },
   {
@@ -1003,7 +1003,7 @@ export const testimonials: testimonialsInfo[] = [
     title: "Chess Parent",
     school: "Peters Canyon Elementary School",
     class: "Chess",
-    image: "/images/School_Icons/peterscanyon.jpg",
+    image: "/images/School_Icons/peterscanyon.png",
     text: "I am at a loss for words; upon reading [Justin's] email, I couldn't help but feel an overwhelming sense of relief. The appreciation of the scholarship is truly a blessing to me, and the many years of [my son's] participation have made such an impact on his life! People like [Justin] really do make such an impact.",
   },
   {
@@ -1011,7 +1011,7 @@ export const testimonials: testimonialsInfo[] = [
     title: "Theater Parent",
     school: "Arroyo Elementary School",
     class: "Theater",
-    image: "/images/School_Icons/arroyo.jpg",
+    image: "/images/School_Icons/arroyo.png",
     text: "Watching my once-shy daughter perform confidently on stage was a dream come true. The theater staff at IAC excel at nurturing talent and fostering self-esteem. Her enthusiasm for school has grown significantly, and she comes home eager to share her experiences.",
   },
   {
@@ -1019,7 +1019,7 @@ export const testimonials: testimonialsInfo[] = [
     title: "Soccer Parent",
     school: "Hicks Elementary School",
     class: "Soccer",
-    image: "/images/School_Icons/hicks.jpg",
+    image: "/images/School_Icons/hicks.png",
     text: "The soccer program is outstanding! The coaches are highly skilled and serve as excellent role models. The staff ensure that every child feels included and valued, which has greatly boosted my son's confidence. I am deeply grateful to IAC for the peace of mind they provide.",
   },
   {
@@ -1027,7 +1027,7 @@ export const testimonials: testimonialsInfo[] = [
     title: "Creative Writing Parent",
     school: "Historic Anaheim Elementary School",
     class: "Creative Writing",
-    image: "/images/School_Icons/fairmont.jpg",
+    image: "/images/School_Icons/fairmont.png",
     text: "The creative writing program at IAC has been transformative for my daughter. The workshops have elevated her skills to new heights. As a working parent, finding quality after-school care was challenging until we discovered IAC. The diverse range of activities keeps my son engaged, and I greatly value the balance between education and fun that the program offers.",
   },
   {
@@ -1035,7 +1035,7 @@ export const testimonials: testimonialsInfo[] = [
     title: "School Staff",
     school: "Peters Canyon Elementary School",
     class: "Chess",
-    image: "/images/School_Icons/peterscanyon.jpg",
+    image: "/images/School_Icons/peterscanyon.png",
     text: "IAC's chess program has greatly enhanced student concentration and problem-solving abilities. The staff are patient and create a supportive environment that allows students to thrive, regardless of their skill level. The program reinforces the lessons we teach.",
   },
   {
@@ -1043,7 +1043,7 @@ export const testimonials: testimonialsInfo[] = [
     title: "School Staff",
     school: "North Tustin Elementary School",
     class: "Chess",
-    image: "/images/School_Icons/fairmont.jpg",
+    image: "/images/School_Icons/fairmont.png",
     text: "The chess club facilitated by IAC has become a highlight for many students. The program has significantly improved students' critical thinking skills and had a positive effect on their behavior and social skills.",
   },
   {
@@ -1051,7 +1051,7 @@ export const testimonials: testimonialsInfo[] = [
     title: "Parent",
     school: "Hicks Elementary School",
     class: "Basketball",
-    image: "/images/School_Icons/hicks.jpg",
+    image: "/images/School_Icons/hicks.png",
     text: "I can’t speak highly enough of the basketball program at IAC. My daughter eagerly looks forward to every practice, excited to develop her abilities and engage with her teammates. The program strikes a perfect balance between skill development, teamwork, and fun.",
   },
 ];
