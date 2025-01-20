@@ -21,6 +21,8 @@ import {
   FaChartPie,
   FaGraduationCap,
   FaMedal,
+  FaTrophy,
+  FaSchool,
 } from "react-icons/fa";
 import { FaPencil } from "react-icons/fa6";
 import {
@@ -30,7 +32,13 @@ import {
   GiWhistle,
 } from "react-icons/gi";
 import { TfiWrite } from "react-icons/tfi";
-import { MdOutlineBrush, MdOutlineFormatQuote, MdTimer } from "react-icons/md";
+import {
+  MdClass,
+  MdOutlineBrush,
+  MdOutlineFormatQuote,
+  MdSchool,
+  MdTimer,
+} from "react-icons/md";
 import {
   programInfo,
   showcaseInfo,
@@ -39,31 +47,33 @@ import {
 } from "./types";
 import { IoMusicalNotes, IoMusicalNoteSharp } from "react-icons/io5";
 import { ModeButton } from "@/components/ModeButton";
+import { IoIosSchool } from "react-icons/io";
+import { LiaSchoolSolid } from "react-icons/lia";
 
 export const programsMenu = [
   {
     name: "Program Information",
     description: "Get a better understanding of your traffic",
     href: "/info/programs",
-    icon: ChartPieIcon,
+    icon: MdClass,
   },
   {
     name: "Our Commitment",
     description: "Speak directly to your customers",
     href: "/info/commitment",
-    icon: ChartPieIcon,
+    icon: LiaSchoolSolid,
   },
   {
     name: "Student Showcase",
     description: "Your customers’ data will be safe and secure",
     href: "/info/showcase",
-    icon: ChartPieIcon,
+    icon: FaTrophy,
   },
   {
     name: "Information for Schools",
     description: "Connect with third-party tools",
     href: "/info/schools",
-    icon: ChartPieIcon,
+    icon: FaSchool,
   },
 ];
 
@@ -143,7 +153,7 @@ export const programs: programInfo[] = [
       FaChessQueen,
       FaChessRook,
     ],
-    image: "/images/Class_Photos/Chess/chess-40.jpg",
+    image: "/images/Class_Photos/Chess/chess-44.jpg",
     description:
       "Dive into the world of chess and unleash your potential for strategic mastery, honing your critical thinking and tactical brilliance every step of the way.",
     overview:
@@ -487,6 +497,18 @@ export const showcase: showcaseInfo[] = [
       },
     ],
   },
+  {
+    subject: "Science Fiction",
+    works: [
+      {
+        title: "Space Odyssey",
+        author: "Author C",
+        date: "2025-01-20",
+        description: "An adventurous journey through space.",
+        writing: "In a galaxy far away...",
+      },
+    ],
+  },
 ];
 
 export const staffCategories: staffInfo[] = [
@@ -498,7 +520,6 @@ export const staffCategories: staffInfo[] = [
         role: "Co-Founder/ CEO",
         bio: "Leads with heart, empowering kids to thrive beyond limits",
         image: "/images/Staff_Photos/Justin_P.jpg",
-        icons: [],
         moreInfo: {
           email: "justin@iacafterschools.com",
           phone: "(714) 509-0069",
@@ -529,7 +550,6 @@ export const staffCategories: staffInfo[] = [
         role: "Co-Founder",
         bio: "Provides steadfast support to help kids thrive",
         image: "/images/Staff_Photos/Jason_P.jpg",
-        icons: [],
         moreInfo: {
           text: "When Justin set out to establish IAC, his brother, Jason Perez, was not just a supporter but an indispensable part of that journey as his co-founder and unwavering champion. From the earliest stages of building the company, Jason was the steady anchor on whom Justin relied, offering unyielding support, insightful guidance, and relentless encouragement. His belief in Justin’s vision was profound and absolute. Jason recognized the immense potential in what Justin was creating and, without hesitation, dedicated himself to making that vision a reality. He understood that the journey would be filled with challenges, but his confidence in their shared mission drove him to give his all, day after day. While Justin emerged as the face of IAC, leading with his innovative approach to education, Jason worked diligently behind the scenes to ensure the company had the stability and resources needed to flourish. His quiet strength, strategic thinking, and tireless dedication were fundamental in building the strong foundation on which IAC would stand.<br/>As co-founder, Jason brought a unique blend of practical knowledge, strategic insight, and unwavering dedication that perfectly complemented Justin’s passion for teaching. He understood the nuances of starting a new venture—the long hours, the uncertainties, and the need for resilience—and was there at every turn to navigate obstacles and celebrate successes. Far from diminishing his impact, Jason’s work behind the scenes amplified it. He was not only a pillar of support but a force of execution, enabling Justin to shine as the leader while knowing that IAC’s operations were solid and its growth sustainable.<br/>Jason’s contributions went far beyond the financial realm; he was Justin’s confidant, sounding board, and motivator. He made personal sacrifices that underscored his commitment to IAC’s mission and to Justin’s dream. His belief in the transformative power of education was as deep as his dedication to ensuring that IAC could achieve its fullest potential. Jason’s generosity of spirit, boundless dedication, and willingness to go above and beyond propelled the company forward during its formative years. It was his drive and shared vision that helped translate ambition into tangible progress.<br/>Although Jason preferred to stay out of the spotlight, his influence permeates every part of IAC’s story. His quiet commitment was woven into the fabric of the company’s growth, ensuring that every decision and every milestone was backed by his unwavering support. His presence allowed Justin to focus on what he did best—creating an educational environment that was inclusive, innovative, and responsive to the unique needs of students. The synergy between the two brothers was a perfect blend of vision and execution, each playing a role that complemented and elevated the other. This dynamic laid the groundwork for IAC’s success and set the tone for its growth.<br/>Jason’s legacy at IAC is one of quiet strength, steadfast dedication, and enduring impact. As co-founder, he was more than a behind-the-scenes contributor; he was a cornerstone of the company’s early achievements. His belief in Justin’s vision was the driving force behind his unwavering support, and his role in helping turn that vision into a reality is irreplaceable. The profound bond between the brothers, marked by mutual respect and shared determination, created an atmosphere where IAC could thrive. Jason’s influence extended beyond just the initial stages of development; it became embedded in the company’s ethos, inspiring a culture of support, resilience, and ambition that resonates throughout IAC to this day.<br/>His contributions left an indelible mark not only on the company itself but also on everyone who has been part of its journey. In every aspect of IAC’s evolution—from the trust built with students and families to the innovative curriculum that sets it apart—Jason’s dedication is evident. His steadfast commitment to supporting the vision, ensuring operational soundness, and fostering an environment of growth and learning helped shape IAC into what it is today: a beacon of educational excellence.",
           images: [],
@@ -700,12 +720,12 @@ export const staffCategories: staffInfo[] = [
         image: "/images/Staff_Photos/Dominick.jpg",
         icons: [FaChess, FaTheaterMasks],
       },
-      {
-        name: "Krystal Alexander",
-        role: "Theater Instructor",
-        image: "/images/Staff_Photos/Krystal.jpg",
-        icons: [FaChess, FaPencil, FaTheaterMasks],
-      },
+      // {
+      //   name: "Krystal Alexander",
+      //   role: "Theater Instructor",
+      //   image: "/images/Staff_Photos/Krystal.jpg",
+      //   icons: [FaChess, FaPencil, FaTheaterMasks],
+      // },
       {
         name: "Gabriel Hernandez",
         role: "Chess Instructor",

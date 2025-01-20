@@ -1,39 +1,21 @@
 import { showcase } from "@/data/data";
 import React from "react";
-import { Card, CardContent, CardHeader } from "./ui/card";
-import { useRouter } from "next/navigation";
-import { IoClose } from "react-icons/io5";
-import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerDescription,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from "@/components/ui/drawer";
-import { LuArrowBigRightDash } from "react-icons/lu";
-import { Button } from "./ui/button";
-import { Sheet } from "lucide-react";
-import {
-  SheetTrigger,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetClose,
-  SheetDescription,
-} from "./ui/sheet";
+import { Card, CardContent, CardFooter, CardHeader } from "./ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import ShowcaseDrawer from "./DrawerContent";
 
-export const ShowcaseDetails: React.FC = () => {
+export const ShowcaseWork: React.FC = () => {
   return (
-    <div className="flex flex-col gap-4 w-11/12 mx-auto">
+    <Tabs defaultValue="Creative Writing" className="w-full">
+      <TabsList className="gap-3 flex-wrap">
+        {showcase.map((subject, index) => (
+          <TabsTrigger value={subject.subject} key={index}>
+            {subject.subject}
+          </TabsTrigger>
+        ))}
+      </TabsList>
       {showcase.map((subject, index) => (
-        <div key={index} className="" id={`{index}`}>
-          {/* Content */}
-          <CardHeader className="section-title" id="{subject.subject}">
-            <h3 className="font-MorningBakery text-3xl">{subject.subject}</h3>
-          </CardHeader>
-
+        <TabsContent value={subject.subject} key={index}>
           <div className="flex flex-col gap-4">
             {subject.works.map((work, index) => (
               <Card
@@ -41,94 +23,51 @@ export const ShowcaseDetails: React.FC = () => {
                 className={index % 2 === 0 ? "border-r-8" : "border-l-8"}
               >
                 <CardHeader className="pb-3">
-                  <h4 className="font-Cute_Rabbit tracking-widest">
+                  <h4 className="text-lg font-Cute_Rabbit tracking-widest">
                     {work.title}
                   </h4>
-                  <p className="meta">
+                  <p className="meta text-xs">
                     <span className="font-bold">By: </span>
-                    {work.author} | <span className="font-bold">Date: </span>
+                    {work.author}
+                  </p>
+                  <p className="meta text-xs">
+                    <span className="font-bold">Date: </span>
                     {work.date}
                   </p>
                 </CardHeader>
                 <CardContent className="gap-3 flex flex-col">
                   {work.description}
                   <hr />
-                  {work.preview && <p>{work.preview}...</p>}
+                  {work.preview && (
+                    <p className="italic text-sm">{work.preview}...</p>
+                  )}
+
+                  {work.images && (
+                    <>
+                      <hr />
+                      <div className="grid grid-cols-3 gap-4">
+                        {work.images.map((image, index) => (
+                          <img
+                            key={index}
+                            src={image}
+                            alt={`${work.title} image ${index + 1}`}
+                            className="rounded-lg border border-input"
+                          />
+                        ))}
+                      </div>
+                    </>
+                  )}
                 </CardContent>
 
-                {work.images && (
-                  <>
-                    <hr />
-                    <div className="grid grid-cols-3 gap-4">
-                      {work.images.map((image, index) => (
-                        <img
-                          key={index}
-                          src={image}
-                          alt={`${work.title} image ${index + 1}`}
-                          className="rounded-lg border border-input"
-                        />
-                      ))}
-                    </div>
-                  </>
-                )}
-
-                {work.writing && (
-                  <Sheet>
-                    <SheetTrigger className="group w-1/4 mx-6 mb-6">
-                      Read Entire Piece
-                      <span className="inline-block transition-transform duration-300 ease-in-out group-hover:translate-x-4">
-                        <LuArrowBigRightDash />
-                      </span>
-                    </SheetTrigger>
-                    <SheetContent>
-                      <SheetHeader>
-                        <div className="flex justify-between">
-                          <SheetTitle>{work.title}</SheetTitle>
-                          <SheetClose className="group w-1/12 absolute right-0 top-5 hover:border-none">
-                            <span className="inline-block transition-transform duration-300 ease-in-out group-hover:rotate-90">
-                              <IoClose />
-                            </span>
-                          </SheetClose>
-                        </div>
-                        <SheetDescription>
-                          {work.writing.split("\n").map((line, index) => (
-                            <React.Fragment key={index}>
-                              &emsp;
-                              {line}
-                              <br />
-                            </React.Fragment>
-                          ))}
-                        </SheetDescription>
-                      </SheetHeader>
-                    </SheetContent>
-                  </Sheet>
-                )}
+                <CardFooter className="flex justify-end">
+                  {" "}
+                  <ShowcaseDrawer work={work} />
+                </CardFooter>
               </Card>
             ))}
           </div>
-        </div>
+        </TabsContent>
       ))}
-    </div>
+    </Tabs>
   );
 };
-
-export const ShowcaseNavigation: React.FC = () => {
-  const router = useRouter();
-  return (
-    <div className="flex flex-wrap gap-4">
-      {showcase.map((subject, index) => (
-        <Button
-          key={index}
-          variant={"outline"}
-          size={"sm"}
-          onClick={() => router.push(`/info/showcase#${index}`)}
-          className="mt-2 group"
-        >
-          {subject.subject}
-        </Button>
-      ))}
-    </div>
-  );
-};
-
-export default { ShowcaseDetails, ShowcaseNavigation };

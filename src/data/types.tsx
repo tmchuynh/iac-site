@@ -25,7 +25,7 @@ export interface staffInfo {
     role: string;
     bio?: string;
     image: string;
-    icons:
+    icons?:
       | ForwardRefExoticComponent<
           Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>
         >[]
@@ -66,13 +66,15 @@ export interface testimonialsInfo {
 
 export interface showcaseInfo {
   subject: string;
-  works: {
-    title: string;
-    author: string;
-    date: string;
-    description: string;
-    preview?: string;
-    writing?: string;
-    images?: string[];
-  }[];
+  works: Work[];
+}
+
+export interface Work {
+  title: string;
+  author: string;
+  date: string;
+  description: string;
+  preview?: string;
+  writing?: string;
+  images?: string[];
 }
