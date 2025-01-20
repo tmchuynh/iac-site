@@ -14,11 +14,11 @@ import {
 import { ChevronDownIcon } from "lucide-react";
 import { RiMenu3Fill } from "react-icons/ri";
 import { IoClose } from "react-icons/io5";
-import { Button } from "./button";
+import { Button } from "./ui/button";
 import { programsMenu } from "@/data/data";
-import { ModeToggle } from "../ModeToggle";
+import { ModeToggle } from "./ModeToggle";
 
-export default function MenuBar() {
+export default function NavBar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (

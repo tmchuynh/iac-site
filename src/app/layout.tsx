@@ -4,11 +4,11 @@ import React from "react";
 import { NotFoundProvider } from "./context/NotFoundContext";
 import "./globals.css";
 import { Providers } from "./providers";
-import MenuBar from "@/components/ui/menu";
 import Banner from "@/components/ui/banner";
 import BackToTop from "@/components/BackToTop";
 import SpeedDial from "@/components/SpeedDial";
 import { actions } from "@/data/data";
+import NavBar from "@/components/NavBar";
 
 export default function RootLayout({
   children,
@@ -38,7 +38,7 @@ export default function RootLayout({
         <NotFoundProvider>
           <Providers>
             <MainContent>
-              <MenuBar />
+              <NavBar />
               {children}
               <SpeedDial actions={actions} />
               <BackToTop />

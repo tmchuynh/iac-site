@@ -8,8 +8,8 @@ import { LuArrowBigRightDash } from "react-icons/lu";
 const NotFound = () => {
   const router = useRouter();
   return (
-    <main className="grid min-h-full place-items-center px-6 py-24 sm:py-32 lg:px-8">
-      <div className="text-center">
+    <main className="grid place-items-center px-6 py-24 sm:py-32 lg:px-8">
+      <div className="text-center min-h-screen">
         <h1 className="my-4 text-balance uppercase font-Luckiest tracking-wider lg:text-4xl text-lg text-secondary font-extrabold text-center">
           404 Page not found
         </h1>
