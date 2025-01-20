@@ -13,7 +13,7 @@ import { Card, CardContent } from "./card";
 
 export default function Testimonial() {
   return (
-    <section className="relative isolate overflow-hidden px-6">
+    <section className="relative isolate overflow-hidden px-12">
       <Carousel
         opts={{
           align: "start",
@@ -23,17 +23,17 @@ export default function Testimonial() {
             delay: 4000,
           }),
         ]}
-        orientation="vertical"
+        orientation="horizontal"
         className="w-full"
       >
-        <CarouselContent className="-mt-1 h-[37em]">
+        <CarouselContent className="-mt-1 xl:h-[25em] lg:h-[32em] h-[37em] md:h-[20em] lg:w-[24em] w-[20em] xl:w-[40em] md:w-[50em] text-wrap">
           {testimonials.map((testimonial, index) => (
             <CarouselItem
               key={index}
               className="flex flex-col justify-around w-full"
             >
               <div className="px-2 mb-3">
-                <Card className="p-3 min-h-fit bg-transparent">
+                <Card className="p-3 min-h-fit min-w-fit bg-transparent xl:w-[27em] lg:h-[20em] md:h-[16em] h-[30em]">
                   <CardContent>
                     <blockquote className="text-pretty text-sm">
                       <p>{`“${testimonial.text}”`}</p>

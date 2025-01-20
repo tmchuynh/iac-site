@@ -25,7 +25,7 @@ export default function Home() {
   return (
     <main>
       <IntroHeader />
-      <section className="mb-12 w-11/12 mx-auto px-4 pt-8 flex justify-center items-center">
+      <section className="mb-12 w-11/12 mx-auto px-4 pt-8 flex justify-center items-center flex-col md:flex-row">
         <div>
           <h1 className="my-4 text-balance uppercase font-Luckiest tracking-wider lg:text-4xl text-lg text-secondary font-extrabold text-center">
             About IAC
@@ -78,7 +78,7 @@ export default function Home() {
           skills, and grow through sports, arts, and technology.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
           <div>
             <h2 className="text-2xl font-semibold mb-2 font-Cute_Rabbit tracking-widest">
               Innovation
@@ -136,8 +136,8 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="grid grid-cols-2 w-11/12 mx-auto items-center">
-        <section className="mb-12 w-11/12 mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-2 w-11/12 mx-auto items-center">
+        <section className="mb-12 w-11/12 mx-auto col lg:col-span-1">
           <h1 className="my-4 text-balance uppercase font-Luckiest tracking-wider lg:text-4xl text-lg text-secondary font-extrabold text-center">
             Amazing Dedicated Instructors
           </h1>
@@ -150,7 +150,7 @@ export default function Home() {
             education for our students. We are dedicated to providing:
           </p>
 
-          <ul className="py-2 flex flex-col gap-3">
+          <ul className="py-2 grid grid-cols-1 xl:grid-cols-2 gap-3">
             {[
               {
                 title: "Interactive and Entertaining Curriculum:",
@@ -200,7 +200,7 @@ export default function Home() {
           </Button>
         </section>
 
-        <section className="mb-12 px-10 mx-auto">
+        <section className="mb-12 px-10 mx-auto col lg:col-span-1">
           <h1 className="mb-4 text-balance uppercase font-Luckiest tracking-wider lg:text-4xl text-lg text-secondary font-extrabold text-center">
             Testimonials
           </h1>
