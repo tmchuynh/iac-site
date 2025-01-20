@@ -1,7 +1,7 @@
 "use client";
 import { Drawer } from "vaul";
 import { FC } from "react";
-import { staffCategories } from "@/data/data";
+import { accentColors, staffCategories } from "@/data/data";
 import React from "react";
 import { IoClose } from "react-icons/io5";
 import { Button } from "@/components/ui/button";
@@ -24,13 +24,7 @@ import HeroSection from "@/components/ui/hero";
 
 const StaffPage: FC = () => {
   const router = useRouter();
-  const accentColors = [
-    "text-accent-1",
-    "text-accent-2",
-    "text-accent-3",
-    "text-accent-4",
-    "text-accent-5",
-  ];
+
   return (
     <>
       <HeroSection imageSrc="/images/Class_Photos/Chess/chess-46.jpg" />
@@ -78,7 +72,6 @@ const StaffPage: FC = () => {
                       {staff.icons ? (
                         <div className="flex flex-wrap space-x-4 justify-center items-center mb-4">
                           {staff.icons.map((Icon) => {
-                            // Generate a deterministic color based on the Icon's name
                             const colorIndex =
                               [...Icon.name].reduce(
                                 (sum, char) =>

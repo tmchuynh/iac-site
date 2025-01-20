@@ -62,7 +62,7 @@ export default {
 					'3': 'var(--chart-3)',
 					'4': 'var(--chart-4)',
 					'5': 'var(--chart-5)',
-					foreground: 'var(--accent-foreground)',
+					foreground: 'var(--chart-foreground)',
 				},
 				sidebar: {
 					DEFAULT: 'var(--sidebar-background)',
@@ -90,4 +90,16 @@ export default {
 		}
 	},
 	plugins: [require( "tailwindcss-animate" )],
+	safelist: [
+		"bg-accent-1",
+		"bg-accent-2",
+		"bg-accent-3",
+		"bg-accent-4",
+		"bg-accent-5",
+		"bg-chart-1",
+		"bg-chart-2",
+		"bg-chart-3",
+		"bg-chart-4",
+		"bg-chart-5",
+	],
 } satisfies Config;

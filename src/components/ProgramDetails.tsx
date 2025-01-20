@@ -1,114 +1,174 @@
-import { programs } from "@/data/data";
-import React, { useState } from "react";
-import { LuArrowBigRightDash } from "react-icons/lu";
+import { accentColors, programs } from "@/data/data";
+import { TabsContent } from "@radix-ui/react-tabs";
+import React, { useRef, useState } from "react";
+import { LuArrowBigLeftDash, LuArrowBigRightDash } from "react-icons/lu";
 import { Button } from "./ui/button";
+import { Tabs, TabsList, TabsTrigger } from "./ui/tabs";
+import HyperText from "./ui/hyper-text";
 
 export const ProgramDetails: React.FC = () => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null); // Track active program index
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const hyperTextRef = useRef<{ triggerAnimation: () => void }>(null);
+  const [text, setText] = useState("View Images");
+
+  const handleClick = () => {
+    setText((prevText) =>
+      prevText === "View Images" ? "Hide Images" : "View Images"
+    );
+    hyperTextRef.current?.triggerAnimation();
+  };
 
   return (
-    <div className="flex flex-col gap-4">
-      {programs.map((program, index) => (
-        <div key={index} className="" id={`${index}`}>
-          {/* Content */}
-          <div className="pb-6">
-            <h2 className="text-2xl font-bold mb-4 font-MorningBakery tracking-widest text-secondary">
-              {program.title}
-            </h2>
-
-            {/* Overview */}
-            {program.overview && (
-              <>
-                <h3 className="text-lg font-semibold mt-4 font-Cute_Rabbit tracking-widest">
-                  Overview
-                </h3>
-                <p className="mb-4">{program.overview}</p>
-              </>
-            )}
-
-            {/* Keypoints */}
-            {program.keypoints.length > 0 && (
-              <>
-                <h3 className="text-lg font-semibold mt-4 font-Cute_Rabbit tracking-widest">
-                  Key Components
-                </h3>
-                <ul className="list-disc pl-6 space-y-2">
-                  {program.keypoints.map((point, pointIndex) => (
-                    <li key={pointIndex}>
-                      <strong>{point.split(":")[0]}:</strong>{" "}
-                      {point.split(":")[1]}
-                    </li>
-                  ))}
-                </ul>
-              </>
-            )}
-
-            {/* Outcomes */}
-            {program.outcome && (
-              <>
-                <h3 className="text-lg font-semibold mt-4 font-Cute_Rabbit tracking-widest">
-                  Learning Outcomes
-                </h3>
-                <p className="mb-4">{program.outcome}</p>
-              </>
-            )}
-
-            {/* Goals */}
-            {program.goal && (
-              <>
-                <h3 className="text-lg font-semibold mt-4 font-Cute_Rabbit tracking-widest">
-                  Program Goals
-                </h3>
-                <p className="">{program.goal}</p>
-              </>
-            )}
-
-            {/* Images */}
-            {program.images.length > 0 ? (
-              <div className="py-2">
-                <div className="flex items-start justify-between pb-7">
-                  <h3 className="text-lg font-semibold font-Cute_Rabbit m-0 tracking-widest">
-                    Class Images
-                  </h3>
-                  <Button
-                    onClick={
-                      () => setActiveIndex(activeIndex === index ? null : index) // Toggle active index
-                    }
-                    className="w-1/5 group"
+    <>
+      <Tabs defaultValue="Chess" className="w-full">
+        <TabsList className="flex-wrap justify-start gap-3 h-full py-3 mb-10">
+          {programs.map((program) => (
+            <TabsTrigger value={program.title} key={program.title}>
+              {program.icons.map((Icon, iconIndex) =>
+                iconIndex === 0 ? (
+                  <span
+                    key={`icon-${program.title}-${iconIndex}`}
+                    className="inline-block w-4 h-4 mr-2"
                   >
-                    View Images
-                    <span className="inline-block transition-transform duration-300 ease-in-out group-hover:translate-x-2">
-                      <LuArrowBigRightDash />
-                    </span>
-                  </Button>
-                </div>
-                <div>
-                  {activeIndex === index && (
-                    <div className="flex flex-wrap gap-5 justify-between">
-                      {program.images.map((image, imageIndex) => (
-                        <img
-                          key={imageIndex}
-                          src={image}
-                          className="object-cover object-center aspect-video w-1/5"
-                          alt={`${program.title} Image ${imageIndex + 1}`}
-                        />
-                      ))}
-                    </div>
-                  )}
-                </div>
-              </div>
-            ) : (
-              <div className="py-6 text-center uppercase">
-                {" "}
-                Class Photos To Come
-              </div>
-            )}
+                    <Icon />
+                  </span>
+                ) : null
+              )}
+              {program.title}
+            </TabsTrigger>
+          ))}
+        </TabsList>
+        {programs.map((program, programIndex) => (
+          <TabsContent value={program.title} key={`content-${program.title}`}>
+            <div className="" id={`${programIndex}`}>
+              {/* Content */}
+              <div className="pb-6">
+                <h2 className="text-2xl font-bold mb-4 font-MorningBakery tracking-widest  flex justify-between">
+                  <div className="text-secondary">{program.title}</div>
+                  {program.icons.map((Icon, iconIndex) => {
+                    const isValidColorIndex =
+                      iconIndex >= 0 && iconIndex < accentColors.length;
+                    const textColorClass = isValidColorIndex
+                      ? `text-${accentColors[iconIndex]}`
+                      : "text-accent-4";
 
-            {index === programs.length - 1 ? "" : <hr />}
-          </div>
-        </div>
-      ))}
-    </div>
+                    return (
+                      <span
+                        key={`icon-${program.title}-${iconIndex}`}
+                        className="inline-block w-4 h-4 mr-2"
+                      >
+                        <Icon className={textColorClass} />
+                      </span>
+                    );
+                  })}
+                </h2>
+
+                {/* Overview */}
+                {program.overview && (
+                  <>
+                    <h3 className="text-lg font-semibold mt-4 font-Cute_Rabbit tracking-widest">
+                      Overview
+                    </h3>
+                    <p className="mb-4">{program.overview}</p>
+                  </>
+                )}
+
+                {/* Keypoints */}
+                {program.keypoints.length > 0 && (
+                  <>
+                    <h3 className="text-lg font-semibold mt-4 font-Cute_Rabbit tracking-widest">
+                      Key Components
+                    </h3>
+                    <ul className="list-disc pl-6 space-y-2">
+                      {program.keypoints.map((point, pointIndex) => (
+                        <li key={pointIndex}>
+                          <strong>{point.split(":")[0]}:</strong>{" "}
+                          {point.split(":")[1]}
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                )}
+
+                {/* Outcomes */}
+                {program.outcome && (
+                  <>
+                    <h3 className="text-lg font-semibold mt-4 font-Cute_Rabbit tracking-widest">
+                      Learning Outcomes
+                    </h3>
+                    <p className="mb-4">{program.outcome}</p>
+                  </>
+                )}
+
+                {/* Goals */}
+                {program.goal && (
+                  <>
+                    <h3 className="text-lg font-semibold mt-4 font-Cute_Rabbit tracking-widest">
+                      Program Goals
+                    </h3>
+                    <p className="">{program.goal}</p>
+                  </>
+                )}
+
+                {/* Images */}
+                {program.images.length > 0 ? (
+                  <div className="py-2">
+                    <div className="flex items-start justify-between pb-7">
+                      <h3 className="text-lg font-semibold font-Cute_Rabbit m-0 tracking-widest">
+                        Class Images
+                      </h3>
+                      <Button
+                        onClick={() => {
+                          handleClick();
+                          setActiveIndex(
+                            activeIndex === programIndex ? null : programIndex
+                          );
+                        }}
+                        className="w-1/2 group"
+                      >
+                        <HyperText ref={hyperTextRef}>{text}</HyperText>
+                        <span
+                          className={`inline-block transition-transform duration-300 ease-in-out ${
+                            activeIndex === programIndex
+                              ? "rotate-180 group-hover:translate-x-2"
+                              : "group-hover:translate-x-2"
+                          }`}
+                        >
+                          {activeIndex === programIndex ? (
+                            <LuArrowBigLeftDash />
+                          ) : (
+                            <LuArrowBigRightDash />
+                          )}
+                        </span>
+                      </Button>
+                    </div>
+                    <div>
+                      {activeIndex === programIndex && (
+                        <div className="flex flex-wrap gap-5 justify-between">
+                          {program.images.map((image, imageIndex) => (
+                            <img
+                              key={imageIndex}
+                              src={image}
+                              className="object-cover object-center aspect-video w-1/5"
+                              alt={`${program.title} Image ${imageIndex + 1}`}
+                            />
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                ) : (
+                  <div className="py-6 text-center uppercase">
+                    {" "}
+                    Class Photos To Come
+                  </div>
+                )}
+              </div>
+            </div>
+          </TabsContent>
+        ))}
+      </Tabs>
+    </>
   );
 };
 

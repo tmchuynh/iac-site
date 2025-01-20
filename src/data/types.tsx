@@ -2,6 +2,13 @@ import { LucideProps } from "lucide-react";
 import { ForwardRefExoticComponent, RefAttributes } from "react";
 import { IconType } from "react-icons/lib";
 
+export interface MiddleSquareOptions {
+  seed?: number;
+  iterations?: number;
+  minVal?: number;
+  maxVal?: number;
+}
+
 export interface navItem {
   title: string;
   url?: string;

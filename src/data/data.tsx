@@ -36,7 +36,6 @@ import {
   MdClass,
   MdOutlineBrush,
   MdOutlineFormatQuote,
-  MdSchool,
   MdTimer,
 } from "react-icons/md";
 import {
@@ -47,8 +46,23 @@ import {
 } from "./types";
 import { IoMusicalNotes, IoMusicalNoteSharp } from "react-icons/io5";
 import { ModeButton } from "@/components/ModeButton";
-import { IoIosSchool } from "react-icons/io";
 import { LiaSchoolSolid } from "react-icons/lia";
+
+export const chartColors = [
+  "chart-1",
+  "chart-2",
+  "chart-3",
+  "chart-4",
+  "chart-5",
+];
+
+export const accentColors = [
+  "accent-1",
+  "accent-2",
+  "accent-3",
+  "accent-4",
+  "accent-5",
+];
 
 export const programsMenu = [
   {
@@ -939,22 +953,22 @@ export const logos = [
 export const features = [
   {
     icon: <FaMedal className="w-8 h-8" />,
-    bgClass: "bg-chart-1",
+    bgClass: "bg-accent-1",
     text: "Trusted by leading schools and parents",
   },
   {
     icon: <FaGraduationCap className="w-8 h-8" />,
-    bgClass: "bg-chart-2",
+    bgClass: "bg-accent-2",
     text: "Experienced & Dedicated Professional Instructors",
   },
   {
     icon: <FaChartPie className="w-8 h-8" />,
-    bgClass: "bg-chart-3",
+    bgClass: "bg-accent-2",
     text: "Well diversed classes in various disciplines",
   },
   {
     icon: <FaBrain className="w-8 h-8" />,
-    bgClass: "bg-chart-3",
+    bgClass: "bg-accent-2",
     text: "Inspires growth and collaboration",
   },
 ];
