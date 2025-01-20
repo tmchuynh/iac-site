@@ -1,26 +1,18 @@
 import { accentColors, programs } from "@/data/data";
 import { TabsContent } from "@radix-ui/react-tabs";
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { LuArrowBigLeftDash, LuArrowBigRightDash } from "react-icons/lu";
 import { Button } from "./ui/button";
 import { Tabs, TabsList, TabsTrigger } from "./ui/tabs";
-import HyperText from "./ui/hyper-text";
+import { useTabs } from "@/app/context/TabsContext";
 
 export const ProgramDetails: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
-  const hyperTextRef = useRef<{ triggerAnimation: () => void }>(null);
-  const [text, setText] = useState("View Images");
-
-  const handleClick = () => {
-    setText((prevText) =>
-      prevText === "View Images" ? "Hide Images" : "View Images"
-    );
-    hyperTextRef.current?.triggerAnimation();
-  };
+  const { defaultTab } = useTabs();
 
   return (
     <>
-      <Tabs defaultValue="Chess" className="w-full">
+      <Tabs defaultValue={defaultTab} className="w-full" id="programTabs">
         <TabsList className="flex-wrap justify-start gap-3 h-full py-3 mb-10">
           {programs.map((program) => (
             <TabsTrigger value={program.title} key={program.title}>
@@ -118,15 +110,16 @@ export const ProgramDetails: React.FC = () => {
                         Class Images
                       </h3>
                       <Button
-                        onClick={() => {
-                          handleClick();
+                        onClick={() =>
                           setActiveIndex(
                             activeIndex === programIndex ? null : programIndex
-                          );
-                        }}
-                        className="w-1/2 group"
+                          )
+                        }
+                        className="mt-2 group"
                       >
-                        <HyperText ref={hyperTextRef}>{text}</HyperText>
+                        {activeIndex === programIndex
+                          ? "Hide Images"
+                          : "View Images"}
                         <span
                           className={`inline-block transition-transform duration-300 ease-in-out ${
                             activeIndex === programIndex

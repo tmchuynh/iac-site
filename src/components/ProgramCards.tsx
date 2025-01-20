@@ -6,28 +6,30 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "./ui/card";
 import { programs } from "@/data/data";
 import { LuArrowBigRightDash } from "react-icons/lu";
+import { useTabs } from "@/app/context/TabsContext";
 
 export default function ProgramCards() {
   const router = useRouter();
+  const { setDefaultTab } = useTabs();
+
+  function handleClick(program: string) {
+    setDefaultTab(program);
+    router.push(`/info/programs#${program}`);
+  }
 
   return (
-    <section className="mb-12 grid grid-cols-3 gap-3 px-6 w-11/12 mx-auto">
+    <section className="mb-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 px-6 w-11/12 mx-auto">
       {programs.map((program, index) => (
         <Card
           key={index}
-          className={
-            index % 2 === 0
-              ? "grid grid-rows-2 bg-background"
-              : "grid grid-rows-2"
-          }
+          className={`flex flex-col justify-between overflow-hidden bg-card text-card-foreground`}
         >
-          <CardHeader className="row-span-2 flex flex-col justify-between gap-1">
+          <CardHeader className="h-full flex flex-col justify-between">
             <div>
               <CardTitle>{program.title}</CardTitle>
               <CardDescription>{program.description}</CardDescription>
@@ -49,25 +51,23 @@ export default function ProgramCards() {
               ))}
             </div>
           </CardHeader>
-          <CardContent className="h-48">
+          <CardContent className="h-fit">
             <img
               src={program.image}
               alt={program.title + " image"}
-              className="w-full pb-5 h-48 object-cover object-center"
+              className="min-w-full pb-5 h-48 object-cover object-center"
             />
-          </CardContent>
-          <CardFooter>
             <Button
               variant={index % 2 === 0 ? "outline" : "default"}
-              onClick={() => router.push(`/info/programs#${index}`)}
-              className="w-full group"
+              onClick={() => handleClick(program.title)}
+              className="mt-2 group w-full text-wrap"
             >
               More Information
               <span className="inline-block transition-transform duration-300 ease-in-out group-hover:translate-x-4">
                 <LuArrowBigRightDash />
               </span>
             </Button>
-          </CardFooter>
+          </CardContent>
         </Card>
       ))}
     </section>

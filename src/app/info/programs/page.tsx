@@ -34,7 +34,6 @@ const ProgramsPage: FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 py-2 uppercase gap-2 text-lg lg:text-sm">
             {features.map((feature, index) => {
               const normalizedIndex = index % accentColors.length;
-
               const bgColorClass = `bg-${accentColors[normalizedIndex]}`;
 
               return (
@@ -54,7 +53,7 @@ const ProgramsPage: FC = () => {
           </div>
         </section>
 
-        <div className="flex flex-col xl:flex-row gap-4">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
           <section className="mb-12 mx-auto">
             <ProgramDetails />
           </section>
@@ -117,7 +116,7 @@ const ProgramsPage: FC = () => {
 
             <Button
               onClick={() => router.push("/info/schools")}
-              className="w-1/2 group"
+              className="mt-2 group"
             >
               More About Our Curriculum
               <span className="inline-block transition-transform duration-300 ease-in-out group-hover:translate-x-2">

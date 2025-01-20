@@ -40,7 +40,7 @@ const SchoolsInfo: FC = () => {
 
           <Button
             onClick={() => router.push("/contact")}
-            className="mt-2 w-1/4 group"
+            className="mt-2 group"
           >
             Start Today
             <span className="inline-block transition-transform duration-300 ease-in-out group-hover:translate-x-4">
@@ -146,20 +146,20 @@ const SchoolsInfo: FC = () => {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-2 font-Cute_Rabbit text-lg lg:text-2xl">
-            <div className="flex flex-col items-center text-center gap-3">
-              <div className="bg-chart-1 w-fit p-2 rounded-md mx-auto">
+            <div className="flex flex-col items-center text-center gap-3 tracking-widest">
+              <div className="bg-accent-5 w-fit p-2 rounded-md mx-auto text-background">
                 <FaCalendarAlt className="w-8 h-8" />
               </div>
               <p>Schedule a consultation</p>
             </div>
-            <div className="flex flex-col items-center text-center gap-3">
-              <div className="bg-chart-2 w-fit p-2 rounded-md mx-auto">
+            <div className="flex flex-col items-center text-center gap-3 tracking-widest">
+              <div className="bg-accent-2 w-fit p-2 rounded-md mx-auto text-background">
                 <FaMoneyBillAlt className="w-8 h-8" />
               </div>
               <p>Discuss pricing and plan options</p>
             </div>
-            <div className="flex flex-col items-center text-center gap-3">
-              <div className="bg-chart-3 w-fit p-2 rounded-md mx-auto">
+            <div className="flex flex-col items-center text-center gap-3 tracking-widest">
+              <div className="bg-accent-3 w-fit p-2 rounded-md mx-auto text-background">
                 <FaCheckDouble className="w-8 h-8" />
               </div>
               <p>Review site specific program requirements</p>
@@ -173,7 +173,7 @@ const SchoolsInfo: FC = () => {
           </p>
           <Button
             onClick={() => router.push("/contact")}
-            className="mt-2 w-1/4 group"
+            className="mt-2 group"
           >
             Get In Touch
             <span className="inline-block transition-transform duration-300 ease-in-out group-hover:translate-x-4">

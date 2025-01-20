@@ -2,17 +2,15 @@ import { logos } from "@/data/data";
 
 export default function LogoCloud() {
   return (
-    <div className="mx-auto grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
-      {logos.map( ( logo, index ) => (
+    <div className="mx-auto flex flex-wrap gap-5 justify-center items-center">
+      {logos.map((logo, index) => (
         <img
           key={index}
           alt={logo.alt}
           src={logo.src}
-          width={158}
-          height={48}
-          className="col-span-2 max-h-28 w-full object-contain lg:col-span-1"
+          className="object-cover h-24 md:h-36"
         />
-      ) )}
+      ))}
     </div>
   );
 }

@@ -3,12 +3,25 @@ import IntroHeader from "@/components/IntroHeader";
 import ProgramCards from "@/components/ProgramCards";
 import { Button } from "@/components/ui/button";
 import Testimonial from "@/components/ui/testimonial";
+import { useTheme } from "next-themes";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import { FaChalkboardTeacher } from "react-icons/fa";
 import { LuArrowBigRightDash } from "react-icons/lu";
 
 export default function Home() {
   const router = useRouter();
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
+
   return (
     <main>
       <IntroHeader />
@@ -30,7 +43,7 @@ export default function Home() {
           </p>
           <Button
             onClick={() => router.push(`/info/programs`)}
-            className="w-1/4 group"
+            className="mt-2 group"
           >
             Our Programs
             <span className="inline-block transition-transform duration-300 ease-in-out group-hover:translate-x-4">
@@ -38,11 +51,19 @@ export default function Home() {
             </span>
           </Button>
         </div>
-        <img
-          alt="IAC Logo"
-          src="/images/tShirtLogo.png"
-          className="h-36 w-auto"
-        />
+        {theme === "dark" ? (
+          <img
+            alt="IAC Logo"
+            src="/images/whiteLogo.png"
+            className="h-28 w-auto"
+          />
+        ) : (
+          <img
+            alt="IAC Logo"
+            src="/images/tShirtLogo.png"
+            className="h-40 w-auto"
+          />
+        )}
       </section>
 
       <section className="mb-12 w-11/12 mx-auto px-4">
@@ -170,7 +191,7 @@ export default function Home() {
           </ul>
           <Button
             onClick={() => router.push(`/about/staff`)}
-            className="w-1/2 group"
+            className="mt-2 group"
           >
             Meet The Team
             <span className="inline-block transition-transform duration-300 ease-in-out group-hover:translate-x-4">
@@ -203,13 +224,13 @@ export default function Home() {
         </p>
 
         <div className="flex mx-auto gap-6 justify-center py-3">
-          <div className="rounded-full bg-chart-3 h-16 w-16 flex justify-center items-center pt-2 font-Magic text-5xl dark:text-background">
+          <div className="rounded-full bg-accent-3 h-16 w-16 flex justify-center items-center pt-2 font-Magic text-5xl dark:text-background">
             A
           </div>
-          <div className="rounded-full bg-chart-1 h-16 w-16 flex justify-center items-center pt-2 font-Magic text-5xl dark:text-background">
+          <div className="rounded-full bg-accent-1 h-16 w-16 flex justify-center items-center pt-2 font-Magic text-5xl dark:text-background">
             R
           </div>
-          <div className="rounded-full bg-chart-2 h-16 w-16 flex justify-center items-center pt-2 font-Magic text-5xl dark:text-background">
+          <div className="rounded-full bg-accent-2 h-16 w-16 flex justify-center items-center pt-2 font-Magic text-5xl dark:text-background">
             C
           </div>
         </div>
@@ -225,7 +246,7 @@ export default function Home() {
         </p>
         <Button
           onClick={() => router.push(`/info/schools`)}
-          className="w-1/4 group"
+          className="mt-2 group"
         >
           Learn More About A.R.C.
           <span className="inline-block transition-transform duration-300 ease-in-out group-hover:translate-x-4">

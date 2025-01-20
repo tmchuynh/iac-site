@@ -24,12 +24,14 @@ export default function NavBar() {
   return (
     <header>
       <nav
-        aria-label="Global"
+        aria-label="NavBar"
         className="mx-auto flex items-center justify-between p-6 m-0 bg-primary text-primary-foreground font-Luckiest tracking-widest text-lg"
       >
         <div className="flex lg:flex-1">
           <a href="/" className="-m-1.5">
-            <span className="sr-only">Your Company</span>
+            <span className="sr-only">
+              International Activities Club - Bringing Enrichment to Your School
+            </span>
             <img
               alt="IAC Logo"
               src="/images/whiteLogo.png"
@@ -125,7 +127,7 @@ export default function NavBar() {
               className="-m-2.5 rounded-md p-2.5 group"
             >
               <span className="sr-only">Close menu</span>
-              <span className="inline-block absolute top-8 right-6 transition-transform duration-300 ease-in-out group-hover:rotate-90">
+              <span className="inline-block absolute top-8 right-6 transition-transform duration-300 ease-in-out group-hover:rotate-90 text-foreground">
                 <IoClose />
               </span>
             </Button>

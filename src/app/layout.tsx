@@ -9,6 +9,8 @@ import BackToTop from "@/components/BackToTop";
 import SpeedDial from "@/components/SpeedDial";
 import { actions } from "@/data/data";
 import NavBar from "@/components/NavBar";
+import NavFooter from "@/components/NavFooter";
+import { TabsProvider } from "./context/TabsContext";
 
 export default function RootLayout({
   children,
@@ -37,13 +39,16 @@ export default function RootLayout({
       <body>
         <NotFoundProvider>
           <Providers>
-            <MainContent>
-              <NavBar />
-              {children}
-              <SpeedDial actions={actions} />
-              <BackToTop />
-              <Banner />
-            </MainContent>
+            <TabsProvider>
+              <MainContent>
+                <NavBar />
+                {children}
+                <SpeedDial actions={actions} />
+                <BackToTop />
+                <Banner />
+                <NavFooter />
+              </MainContent>
+            </TabsProvider>
           </Providers>
         </NotFoundProvider>
       </body>

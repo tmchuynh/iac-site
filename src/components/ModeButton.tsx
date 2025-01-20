@@ -35,6 +35,9 @@ const ModeButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     const handleThemeToggle = () => {
       setTheme(theme === "dark" ? "light" : "dark");
+      if (window.location.pathname === "/info/programs") {
+        window.location.reload();
+      }
     };
 
     return (
